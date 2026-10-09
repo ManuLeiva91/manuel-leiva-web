@@ -32,6 +32,7 @@
   var deManuel = eventos.filter(function (e) { return e.quien !== 'facttic'; });
   var agenda = deManuel.filter(esProximo).sort(porFecha(true));
   var pasados = deManuel.filter(function (e) { return !esProximo(e) && e.foto; }).sort(porFecha(false));
+  var yaPasaron = deManuel.filter(function (e) { return !esProximo(e); }).sort(porFecha(false));
   var presencia = eventos.filter(function (e) { return e.quien === 'facttic' || e.quien === 'ambos'; }).sort(porFecha(false));
 
   /* ---------- Destacado y próxima charla ---------- */
@@ -61,10 +62,18 @@
   }
   function renderAgenda() {
     var box = $('#agenda'); if (!box) return;
-    if (!agenda.length) { box.innerHTML = '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>'; return; }
-    box.innerHTML = agenda.map(function (e) {
+    if (!agenda.length) { box.innerHTML = '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>'; }
+    else box.innerHTML = agenda.map(function (e) {
       return '<a class="ev" href="' + attr(e.url || '#contacto') + '">' + circuloFecha(e) +
         '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + '</p></div></a>';
+    }).join('');
+    /* Ya pasaron: solo se ve en pantallas anchas (ver estilos.css) */
+    var past = $('#agenda-pasados'); if (!past) return;
+    if (!yaPasaron.length) { var pb = $('#agenda-pasados-box'); if (pb) pb.hidden = true; return; }
+    past.innerHTML = yaPasaron.map(function (e) {
+      var tag = e.url ? 'a' : 'div', href = e.url ? ' href="' + attr(e.url) + '"' : '';
+      return '<' + tag + ' class="ev ev-pasado"' + href + '>' + circuloFecha(e) +
+        '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + (e.tema ? '<br>' + e.tema : '') + '</p></div></' + tag + '>';
     }).join('');
   }
   function renderPasados() {

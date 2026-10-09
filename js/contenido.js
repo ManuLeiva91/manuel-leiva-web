@@ -63,6 +63,13 @@ window.CONTENIDO = {
      presencia: texto corto para la pastilla de "Presencia de FACTTIC" (opcional). */
   eventos: [
     {
+      titulo: "Congreso Internacional de Cooperativas y Mutuales", lugar: "Rosario", tipo: "Congreso",
+      fecha: "2026-07-25", fechaTexto: "25 de julio de 2026",
+      tema: "Comisión Organizadora · moderador del panel «Incubando la cooperación»",
+      foto: "img/eventos/cicm-escenario.jpg", alt: "Manuel Leiva hablando en el escenario del CICM en Rosario", posicion: "50% 35%",
+      quien: "manuel"
+    },
+    {
       titulo: "General Roca", lugar: "Río Negro", tipo: "Conferencia",
       fecha: "2026-10-28", fechaFin: "2026-10-29", fechaTexto: "28 y 29 de octubre de 2026",
       tema: "IA y cooperativismo tecnológico", quien: "manuel"

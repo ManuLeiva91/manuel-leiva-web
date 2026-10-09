@@ -230,7 +230,10 @@ html{scroll-behavior:smooth}
 .placa-cifra{position:relative;z-index:2;font-size:clamp(56px,6cqi,84px);line-height:1;color:#E8452C}
 @container (max-width: 1279px){
 .agenda-wrap > div + div{margin-top:44px}
+#agenda-pasados-box{display:none}
 }
+/* agenda: eventos pasados sin link no reaccionan al hover */
+div.ev-pasado:hover{transform:none;border-color:transparent}
 @container (max-width: 767px){
 .placa .d{font-size:1.15rem}
 }
