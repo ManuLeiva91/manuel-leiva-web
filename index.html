@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuel Leiva · Cooperativismo tecnológico</title>
+<meta name="description" content="Manuel Leiva, presidente de FACTTIC y socio de Redjar. Charlas, notas y contenido sobre cooperativismo tecnológico, IA y trabajo. Cooperar es mejor que competir.">
+<meta property="og:title" content="Manuel Leiva · Cooperar es mejor que competir">
+<meta property="og:description" content="Cooperativismo tecnológico, IA y trabajo. Charlas, notas y redes.">
+<meta property="og:image" content="img/eventos/cicm-escenario.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1E0716">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div class="v2">
+<div class="in">
+
+<!-- NAV -->
+<header class="nav">
+<div class="wrap">
+<div class="bar">
+<a class="brand d" href="#inicio">Manuel Leiva</a>
+<nav class="links" id="links" aria-label="Principal">
+<a href="#temas">Temas</a>
+<a href="#ultimo">Lo último</a>
+<a href="#charlas">Charlas</a>
+<a href="#redes">Redes</a>
+<a href="#quien">Quién soy</a>
+</nav>
+<a class="btn ncta" href="#contacto">Hagamos contacto</a>
+<button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="sec plum" id="inicio" style="padding-top:64px">
+<div class="corner" style="right:-170px;top:-170px"><i></i></div>
+<span class="blob" style="width:460px;height:460px;left:-200px;bottom:-200px;background:rgba(176,40,120,.25)"></span>
+<div class="wrap">
+<div class="hero">
+<div data-reveal>
+<p class="kick">Cooperativismo tecnológico · IA · América Latina</p>
+<h1 class="d hname"><span style="color:#E8452C">Cooperar</span> es mejor que competir</h1>
+<p class="bio">Soy Manuel Leiva. Presido FACTTIC, la federación de cooperativas de tecnología de Argentina, y soy socio de Redjar en Rosario. Acá junto lo que digo en charlas, lo que escribo y lo que publico en redes.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:30px">
+<a class="btn" href="#ultimo">Ver lo último</a>
+<a class="btn gl" href="#redes">Seguime en redes</a>
+</div>
+</div>
+<!-- Se completa desde js/contenido.js → destacado -->
+<a class="card featured" id="destacado" href="#charlas" data-reveal></a>
+</div>
+<!-- Se completa con el próximo evento de la agenda -->
+<div class="next" id="proxima" data-reveal></div>
+</div>
+</section>
+
+<!-- TEMAS -->
+<section class="sec light" id="temas">
+<span class="blob" style="width:360px;height:360px;right:-140px;top:-120px;background:rgba(232,69,44,.15)"></span>
+<div class="wrap">
+<div class="head"><div><p class="kick">Explorá por tema</p><h2 class="d h2">De qué hablo</h2></div></div>
+<div class="topics">
+<a class="topic" href="#ultimo" data-reveal><div><p class="d">Cooperativismo tecnológico</p><small>Notas · charlas · placas</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="topic" href="#ultimo" data-reveal><div><p class="d">IA y trabajo</p><small>Notas · charlas · reels</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="topic" href="#ultimo" data-reveal><div><p class="d">Economía social</p><small>Notas · entrevistas</small></div><span class="arr" aria-hidden="true">→</span></a>
+<a class="topic" href="#ultimo" data-reveal><div><p class="d">América Latina</p><small>Encuentros · alianzas</small></div><span class="arr" aria-hidden="true">→</span></a>
+</div>
+</div>
+</section>
+
+<!-- LO ÚLTIMO -->
+<section class="sec light" id="ultimo" style="padding-top:0">
+<div class="wrap">
+<div class="head">
+<div><p class="kick">Contenido</p><h2 class="d h2">Lo último</h2></div>
+<div class="pills" role="group" aria-label="Filtrar contenido" style="color:#35124F">
+<button class="pill is-active" type="button" data-filtro="todo" aria-pressed="true">Todo</button>
+<button class="pill" type="button" data-filtro="notas" aria-pressed="false">Notas</button>
+<button class="pill" type="button" data-filtro="videos" aria-pressed="false">Videos</button>
+<button class="pill" type="button" data-filtro="placas" aria-pressed="false">Placas</button>
+</div>
+</div>
+<p class="swipe-hint" style="color:#88155D">Deslizá para ver más →</p>
+<div class="feed" id="feed"></div>
+</div>
+</section>
+
+<!-- CHARLAS -->
+<section class="sec violet" id="charlas">
+<span class="blob" style="width:520px;height:520px;right:-220px;bottom:-160px;background:rgba(232,69,44,.16)"></span>
+<div class="wrap">
+<div class="head"><div><p class="kick">Charlas y exposiciones</p><h2 class="d h2">Dónde hablo</h2></div><a class="btn" href="#contacto">Invitame a tu evento</a></div>
+<div class="agenda-wrap">
+<div>
+<p class="kick">Agenda</p>
+<div class="agenda" id="agenda"></div>
+<p class="kick" style="margin-top:36px">Presencia de FACTTIC</p>
+<div class="pills" id="presencia"></div>
+</div>
+<div>
+<p class="kick">Dónde estuve</p>
+<p class="swipe-hint" style="color:#F6EEE8">Deslizá para ver más →</p>
+<div class="talkgrid" id="estuve"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- REDES -->
+<section class="sec ink" id="redes">
+<div class="corner" style="left:-180px;bottom:-200px"><i></i></div>
+<div class="wrap">
+<div class="head"><div><p class="kick">En redes</p><h2 class="d h2">Placas, reels y <span style="color:#E8452C">debate</span></h2></div></div>
+<div class="red-head"><p class="kick" style="color:#F6EEE8">Instagram</p><a class="btn sm" href="https://instagram.com/manuleiva91" target="_blank" rel="noopener">Seguir @manuleiva91</a></div>
+<div id="instagram"></div>
+<div class="red-head"><p class="kick" style="color:#F6EEE8">TikTok</p><a class="btn sm" href="https://www.tiktok.com/@manuleiva91" target="_blank" rel="noopener">Seguir @manuleiva91</a></div>
+<div class="embeds-tt" id="tiktok"></div>
+<div class="follow">
+<a class="fol" href="https://instagram.com/manuleiva91" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle></svg></span><div><b>Instagram</b><span>@manuleiva91</span></div><span class="go">Seguir →</span></a>
+<a class="fol" href="https://linkedin.com/in/manuleiva" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><div><b>LinkedIn</b><span>/in/manuleiva</span></div><span class="go">Conectar →</span></a>
+<a class="fol" href="https://www.tiktok.com/@manuleiva91" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18a3 3 0 1 1-3-3"></path><path d="M9 18V4l10-1v12"></path><circle cx="16" cy="15" r="3"></circle></svg></span><div><b>TikTok</b><span>@manuleiva91</span></div><span class="go">Seguir →</span></a>
+</div>
+</div>
+</section>
+
+<!-- POR QUÉ COOPERAR -->
+<section class="sec plum" id="datos">
+<span class="blob" style="width:420px;height:420px;right:-160px;top:-140px;background:rgba(176,40,120,.25)"></span>
+<div class="wrap">
+<p class="kick">Por qué cooperar</p>
+<h2 class="d motto">Porque la cooperación ya es el mayor <span style="color:#E8452C">impacto positivo</span> en la Argentina</h2>
+<div class="why" style="margin-top:56px">
+<div class="stat" data-reveal><p class="d"><span data-count="15" data-prefix="+" data-suffix="%">+15%</span></p><p>del PBI nacional lo genera la economía social: cooperativas y mutuales.</p></div>
+<div class="stat" data-reveal><p class="d"><span data-count="400000" data-prefix="+">+400.000</span></p><p>puestos de trabajo en todo el país.</p></div>
+<div class="stat" data-reveal><p class="d"><span data-count="25000" data-prefix="+">+25.000</span></p><p>entidades de la economía social, en cada provincia.</p></div>
+<div class="stat" data-reveal><p class="d"><span data-count="27">27</span> M</p><p>de argentinas y argentinos nuclea la economía social.</p></div>
+</div>
+<p class="src">Fuente: Foro Valor Argentino (2023).</p>
+</div>
+</section>
+
+<!-- QUIÉN SOY -->
+<section class="sec light" id="quien">
+<div class="wrap">
+<div class="who">
+<div class="mosaic" data-reveal>
+<figure style="grid-column:span 2"><img class="m1" src="img/eventos/congreso-pantallas.jpg" alt="Manuel Leiva en las pantallas del Congreso Internacional de Cooperativas y Mutuales"><figcaption><span class="pill c">Congreso Internacional de Cooperativas y Mutuales</span></figcaption></figure>
+<img class="m2" src="img/retrato.jpg" alt="Retrato de Manuel Leiva">
+<figure><img class="m3" src="img/eventos/ica-manifiesto.jpg" alt="Entrega del Cooperative Digital Infrastructure Manifesto en la ICA"><figcaption><span class="pill w">ICA · Nueva Delhi 2024</span></figcaption></figure>
+</div>
+<div data-reveal>
+<p class="kick">Quién soy</p>
+<h2 class="d h2" style="color:#35124F">Manuel Leiva</h2>
+<p style="font-size:17px;margin:20px 0 0;max-width:640px">Comunicador social de la universidad pública, rosarino y cooperativista. Trabajo para que la tecnología argentina se haga en cooperativa, con escala y con reparto justo.</p>
+<div class="roles">
+<div class="role"><span class="logo"><img src="img/logos/facttic.png" alt="FACTTIC"></span><div><b>Presidente</b><p>42 cooperativas, +500 asociados y asociadas. Fundada en 2012.</p></div></div>
+<div class="role"><span class="logo"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></span><div><b>Socio y director comercial</b><p>Rosario, desde 2015. 2ª cooperativa tecnológica del país.</p></div></div>
+<div class="role"><span class="logo"><img src="img/logos/cooperar.png" alt="Cooperar, Confederación Cooperativa de la República Argentina" style="height:34px"></span><div><b>Vicepresidente del Comité de Juventud</b><p>2026–2027. Ex presidente del Comité de Juventud (2025–2026).</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section class="sec ink" id="contacto">
+<div class="corner" style="right:-150px;top:-150px"><i></i></div>
+<div class="wrap">
+<p class="kick">Contacto</p>
+<h2 class="d" style="font-size:clamp(3rem,8cqi,7.5rem);max-width:1000px;line-height:1"><span style="color:#E8452C">Cooperar</span> es mejor que competir</h2>
+<div class="cgrid">
+<div class="box">
+<h3 class="d">Hagamos contacto</h3>
+<p>Contame qué tenés en mente. Trabajo en tres frentes:</p>
+<div class="pills" style="margin-top:18px">
+<span class="pill r">Incubación cooperativa</span>
+<span class="pill r">Desarrollo estratégico</span>
+<span class="pill r">Divulgar cooperativismo</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:22px">
+<a class="btn" href="mailto:manuel.leiva@redjar.com.ar">manuel.leiva@redjar.com.ar</a>
+<a class="btn gl" href="https://www.facttic.org.ar" target="_blank" rel="noopener">facttic.org.ar</a>
+</div>
+</div>
+<form class="box" id="newsletter">
+<h3 class="d">Recibí lo nuevo</h3>
+<p>Notas, charlas y datos sobre cooperativismo tecnológico, una vez por mes.</p>
+<div class="field"><label for="v2-mail">Tu email</label><input id="v2-mail" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+<div style="margin-top:16px"><button class="btn" type="submit">Suscribirme</button></div>
+<p class="form-msg" id="newsletter-msg" role="status"></p>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<div class="frow">
+<div style="display:flex;flex-wrap:wrap;gap:10px"><span class="logo"><img src="img/logos/facttic.png" alt="FACTTIC"></span><span class="logo"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></span><span class="logo"><img src="img/logos/cooperar.png" alt="Cooperar" style="height:34px"></span></div>
+<nav class="flinks" aria-label="Redes"><a href="https://instagram.com/manuleiva91" target="_blank" rel="noopener">Instagram</a><a href="https://linkedin.com/in/manuleiva" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.tiktok.com/@manuleiva91" target="_blank" rel="noopener">TikTok</a></nav>
+</div>
+<p style="font-size:13px;margin:28px 0 0;opacity:.75">© <span id="anio">2026</span> Manuel Leiva · @ManuLeiva91 · linkedin.com/in/manuleiva · Rosario, Argentina</p>
+</div>
+</footer>
+</div>
+</div>
+
+<script src="js/contenido.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
