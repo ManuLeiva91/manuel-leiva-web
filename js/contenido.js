@@ -39,11 +39,10 @@ window.CONTENIDO = {
   ],
   mostrarPerfilTiktok: true,
 
-  /* Newsletter (Mailchimp): pegá acá la URL de "action" del formulario embebido
-     (Audience → Signup forms → Embedded forms), ej:
-     "https://xxxx.us21.list-manage.com/subscribe/post?u=XXXX&id=YYYY&f_id=ZZZZ".
-     Si queda vacío, el botón abre un mail. */
-  newsletterAction: "",
+  /* Newsletter (EnvíaloSimple): los datos salen del código de instalación del formulario:
+     .../AdministratorID/205164/FormID/1/... El formulario usa el diseño de esta web
+     y envía los datos a la lista de EnvíaloSimple. Si queda vacío, el botón abre un mail. */
+  newsletterEnvialo: { administratorId: "205164", formId: "1" },
 
   /* ---------- Destacado del inicio ---------- */
   destacado: {

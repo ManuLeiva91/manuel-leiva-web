@@ -167,9 +167,9 @@
 <h2 class="d h2" style="color:#35124F">Manuel Leiva</h2>
 <p style="font-size:17px;margin:20px 0 0;max-width:640px">Comunicador social de la universidad pública, rosarino y cooperativista. Trabajo para que la tecnología argentina se haga en cooperativa, con escala y con reparto justo.</p>
 <div class="roles">
-<div class="role"><span class="logo"><img src="img/logos/facttic.png" alt="FACTTIC"></span><div><b>Presidente</b><p>42 cooperativas, +500 asociados y asociadas. Fundada en 2012.</p></div></div>
-<div class="role"><span class="logo"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></span><div><b>Socio y director comercial</b><p>Rosario, desde 2015. 2ª cooperativa tecnológica del país.</p></div></div>
-<div class="role"><span class="logo"><img src="img/logos/cooperar.png" alt="Cooperar, Confederación Cooperativa de la República Argentina" style="height:34px"></span><div><b>Vicepresidente del Comité de Juventud</b><p>2026–2027. Ex presidente del Comité de Juventud (2025–2026).</p></div></div>
+<div class="role"><a class="logo" href="https://www.facttic.org.ar" target="_blank" rel="noopener"><img src="img/logos/facttic.png" alt="FACTTIC"></a><div><b>Presidente</b><p>42 cooperativas, +500 asociados y asociadas. Fundada en 2012.</p></div></div>
+<div class="role"><a class="logo" href="https://www.redjar.com.ar" target="_blank" rel="noopener"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></a><div><b>Socio y director comercial</b><p>Rosario, desde 2015. 2ª cooperativa tecnológica del país.</p></div></div>
+<div class="role"><a class="logo" href="https://www.cooperar.coop" target="_blank" rel="noopener"><img src="img/logos/cooperar.png" alt="Cooperar, Confederación Cooperativa de la República Argentina" style="height:34px"></a><div><b>Vicepresidente del Comité de Juventud</b><p>2026–2027. Ex presidente del Comité de Juventud (2025–2026).</p></div></div>
 </div>
 </div>
 </div>
@@ -201,6 +201,11 @@
 <h3 class="d">Recibí lo nuevo</h3>
 <p>Notas, charlas y datos sobre cooperativismo tecnológico, una vez por mes.</p>
 <div class="field"><label for="v2-mail">Tu email</label><input id="v2-mail" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+<div class="field" id="newsletter-captcha" hidden>
+<label for="v2-captcha">Escribí el código de la imagen</label>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><img id="newsletter-captcha-img" alt="Imagen con el código de seguridad" width="181" style="height:auto;border-radius:8px;background:#fff"><button class="btn gl sm" type="button" id="newsletter-captcha-refresh">Cambiar imagen</button></div>
+<input id="v2-captcha" name="captchaCode" type="text" maxlength="10" autocomplete="off">
+</div>
 <div style="margin-top:16px"><button class="btn" type="submit">Suscribirme</button></div>
 <p class="form-msg" id="newsletter-msg" role="status"></p>
 </form>
@@ -212,7 +217,7 @@
 <footer class="footer">
 <div class="wrap">
 <div class="frow">
-<div style="display:flex;flex-wrap:wrap;gap:10px"><span class="logo"><img src="img/logos/facttic.png" alt="FACTTIC"></span><span class="logo"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></span><span class="logo"><img src="img/logos/cooperar.png" alt="Cooperar" style="height:34px"></span></div>
+<div style="display:flex;flex-wrap:wrap;gap:10px"><a class="logo" href="https://www.facttic.org.ar" target="_blank" rel="noopener"><img src="img/logos/facttic.png" alt="FACTTIC"></a><a class="logo" href="https://www.redjar.com.ar" target="_blank" rel="noopener"><img src="img/logos/redjar.png" alt="Redjar" style="height:36px"></a><a class="logo" href="https://www.cooperar.coop" target="_blank" rel="noopener"><img src="img/logos/cooperar.png" alt="Cooperar" style="height:34px"></a></div>
 <nav class="flinks" aria-label="Redes"><a href="https://instagram.com/manuleiva91" target="_blank" rel="noopener">Instagram</a><a href="https://linkedin.com/in/manuleiva" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.tiktok.com/@manuleiva91" target="_blank" rel="noopener">TikTok</a></nav>
 </div>
 <img src="img/logo/logo-manuel-leiva-blanco.svg" alt="Manuel Leiva · Cooperar es mejor que competir" style="display:block;height:72px;width:auto;margin-top:36px">

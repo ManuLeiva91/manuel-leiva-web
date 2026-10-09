@@ -235,21 +235,66 @@
   }
 
   /* ---------- Newsletter ---------- */
+  /* Envía la suscripción a EnvíaloSimple con el diseño de esta web. Usa el mismo
+     pedido que el widget oficial del servicio (JSONP + captcha de imagen). */
+  function initEnvialo(f, msg, E) {
+    var BASE = 'https://backend.envialosimple.com/form/';
+    var mailInput = $('#v2-mail'), box = $('#newsletter-captcha'), img = $('#newsletter-captcha-img');
+    var code = $('#v2-captcha'), btn = $('button[type="submit"]', f);
+    var cap = { id: '', sess: '' }, busy = false, pedido = false;
+    var contacto = (C.redes && C.redes.email) || '';
+    var fallo = 'No pudimos completar la suscripción. Probá de nuevo en unos minutos' + (contacto ? ' o escribinos a ' + contacto : '') + '.';
+
+    function loadCaptcha() {
+      fetch(BASE + 'getcaptcha/AdministratorID/' + E.administratorId + '/FormID/' + E.formId, { credentials: 'include' })
+        .then(function (r) { return r.json(); })
+        .then(function (j) { cap.id = j.captchaId; cap.sess = j.PHPSESSID; img.src = j.captchaSrc; code.value = ''; box.hidden = false; })
+        .catch(function () { cap.id = ''; msg.textContent = fallo; });
+    }
+    function pedirCaptcha() { if (pedido) return; pedido = true; loadCaptcha(); }
+    f.addEventListener('focusin', pedirCaptcha);
+    $('#newsletter-captcha-refresh').addEventListener('click', loadCaptcha);
+
+    function respuesta(res) {
+      var err = res && res.error && res.error.code;
+      if (err === 'errorMsg_invalidCaptcha') { msg.textContent = 'El código de la imagen no coincide. Probá de nuevo.'; loadCaptcha(); }
+      else if (err === 'errorMsg_formValidations') { msg.textContent = (res.error.data && res.error.data.Email) ? 'La dirección de correo no es válida.' : 'Revisá los datos e intentá de nuevo.'; loadCaptcha(); }
+      else if (err === 'errorMsg_reachedRequestLimit') { msg.textContent = 'Hay muchos pedidos en este momento. Probá de nuevo en unos minutos.'; }
+      else if (err || !res || !res.result) { msg.textContent = fallo; }
+      else {
+        msg.textContent = res.result.needConfirmation
+          ? 'Te enviamos un correo para confirmar tu suscripción. Revisá tu bandeja de entrada (y el spam).'
+          : '¡Listo! Ya estás suscripto.';
+        mailInput.value = ''; loadCaptcha();
+      }
+    }
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (busy) return;
+      var mail = mailInput.value.trim();
+      if (!mail) { msg.textContent = 'Escribí tu email.'; return; }
+      if (!cap.id || !code.value.trim()) { pedirCaptcha(); msg.textContent = 'Escribí el código de la imagen y tocá Suscribirme.'; if (!box.hidden) code.focus(); return; }
+      busy = true; btn.disabled = true; msg.textContent = 'Enviando…';
+      var cb = 'envialoCb' + Date.now(), s = document.createElement('script'), hecho = false;
+      function fin(res) {
+        if (hecho) return; hecho = true;
+        clearTimeout(timer); delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s);
+        busy = false; btn.disabled = false; respuesta(res);
+      }
+      var timer = setTimeout(function () { fin({ error: { code: 'timeout' } }); }, 30000);
+      window[cb] = fin;
+      s.onerror = function () { fin({ error: { code: 'red' } }); };
+      var q = { callback: cb, AdministratorID: E.administratorId, FormID: E.formId, isFacebook: '0', Email: mail, captchaId: cap.id, PHPSESSID: cap.sess, captchaCode: code.value.trim(), Topo: '' };
+      s.src = BASE + 'subscribe/format/jsonp?' + Object.keys(q).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(q[k]); }).join('&');
+      document.head.appendChild(s);
+    });
+  }
+
   function initNewsletter() {
     var f = $('#newsletter'); if (!f) return;
     var msg = $('#newsletter-msg');
-    if (C.newsletterAction) {
-      f.action = C.newsletterAction; f.method = 'post'; f.target = '_blank';
-      $('#v2-mail').name = 'EMAIL'; /* nombre de campo que exige Mailchimp */
-      var m = C.newsletterAction.match(/[?&]u=([^&]+)&(?:amp;)?id=([^&]+)/);
-      if (m) { /* campo trampa anti-bots de Mailchimp: tiene que ir vacío y oculto */
-        var hp = document.createElement('div'); hp.setAttribute('aria-hidden', 'true'); hp.style.cssText = 'position:absolute;left:-5000px';
-        hp.innerHTML = '<input type="text" name="b_' + attr(m[1]) + '_' + attr(m[2]) + '" tabindex="-1" value="" autocomplete="off">';
-        f.appendChild(hp);
-      }
-      f.addEventListener('submit', function () { msg.textContent = 'Listo: se abrió Mailchimp para confirmar tu suscripción. Revisá tu correo.'; });
-      return;
-    }
+    var E = C.newsletterEnvialo;
+    if (E && E.administratorId && E.formId) { initEnvialo(f, msg, E); return; }
     f.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var mail = $('#v2-mail').value.trim();

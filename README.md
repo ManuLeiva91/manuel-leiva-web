@@ -56,7 +56,7 @@ Instagram no permite mostrar el perfil completo sin una API. Hay dos caminos:
 - Si preferís elegir videos puntuales, pegá sus links en `tiktokVideos`.
 
 ### Newsletter
-Pegá en `newsletterAction` la URL del formulario de tu servicio (Buttondown, Mailchimp, Brevo). Mientras esté vacío, el botón abre un mail para pedir la suscripción.
+El formulario usa el diseño de la web y envía los datos a **EnvíaloSimple** (`newsletterEnvialo` en `contenido.js`: `administratorId` y `formId`, que salen del código de instalación del formulario). Pide un captcha de imagen, que se carga recién cuando alguien toca el campo de email. Si `newsletterEnvialo` queda vacío, el botón abre un mail. La automatización de bienvenida y la doble confirmación se configuran en el panel de EnvíaloSimple, no en el código.
 
 ## Publicar
 
