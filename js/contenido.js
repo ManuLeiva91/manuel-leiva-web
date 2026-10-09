@@ -49,7 +49,7 @@ window.CONTENIDO = {
   destacado: {
     etiqueta: "Conferencia",
     titulo: "Congreso Internacional de Cooperativas y Mutuales",
-    detalle: "Estación Fluvial, Rosario · 15 de julio de 2026",
+    detalle: "Estación Fluvial, Rosario · 25 de julio de 2026",
     foto: "img/eventos/cicm-escenario.jpg",
     alt: "Manuel Leiva hablando en el escenario del CICM en Rosario",
     url: "#charlas"
@@ -81,7 +81,7 @@ window.CONTENIDO = {
       quien: "ambos", presencia: "ACI · Asamblea 2026, Panamá"
     },
     {
-      titulo: "Vincular Inteligente 2026", lugar: "[LUGAR]", tipo: "Conferencia",
+      titulo: "Vincular Inteligente 2026", lugar: "Rosario", tipo: "Conferencia",
       fecha: null, fechaTexto: "2026", tema: "IA y producción · Redjar",
       foto: "img/eventos/vincular.jpg", alt: "Manuel Leiva en Vincular Inteligente 2026", posicion: "50% 25%",
       quien: "manuel", proximo: false
@@ -93,14 +93,14 @@ window.CONTENIDO = {
       quien: "manuel", proximo: false
     },
     {
-      titulo: "JOC 2025", lugar: "[LUGAR]", tipo: "Conferencia",
+      titulo: "JOC 2025", lugar: "Cartagena, Colombia", tipo: "Conferencia",
       fecha: null, fechaTexto: "2025", tema: "Cooperar, construir y fortalecer las redes cooperativas",
       foto: "img/eventos/joc-patio.jpg", alt: "Manuel Leiva presentando FACTTIC y PATIO en el escenario",
       quien: "manuel", proximo: false
     },
     {
       titulo: "1º Foro Internacional ASETT", lugar: "Mondragón", tipo: "Caso de éxito",
-      fecha: null, fechaTexto: "[FECHA]", tema: "Redjar, caso de éxito mundial",
+      fecha: "2025-05-27", fechaFin: "2025-05-30", fechaTexto: "27 al 30 de mayo de 2025", tema: "Redjar, caso de éxito mundial",
       foto: "img/eventos/asett-libro.jpg", alt: "Manuel Leiva con la publicación de Redjar en el foro ASETT",
       quien: "manuel", proximo: false
     },
@@ -128,7 +128,7 @@ window.CONTENIDO = {
     {
       tipo: "nota", etiqueta: "Nota · IA y trabajo",
       foto: "img/eventos/cicm-afiche.jpg", alt: "Manuel Leiva con el afiche del CICM",
-      titulo: "[Título de la nota]", detalle: "[MEDIO] · [FECHA]", url: "#"
+      titulo: "La salida es asociativa", detalle: "El Eslabón · 25 de julio de 2026", url: "https://elesla.com/2026/07/25/la-salida-es-asociativa/"
     },
     {
       tipo: "video", etiqueta: "Video",
@@ -137,8 +137,8 @@ window.CONTENIDO = {
     },
     {
       tipo: "nota", etiqueta: "Nota · Economía social",
-      foto: "img/eventos/escuela.jpg", alt: "Manuel Leiva en una charla con estudiantes", posicion: "50% 20%",
-      titulo: "[Título de la nota]", detalle: "[MEDIO] · [FECHA]", url: "#"
+      foto: "img/eventos/congreso-pantallas.jpg", alt: "Manuel Leiva en las pantallas del Congreso Internacional de Cooperativas y Mutuales",
+      titulo: "La potencia del sector asociativo en la vidriera: se celebra congreso internacional de cooperativas y mutuales", detalle: "El Ciudadano · 24 de julio de 2026", url: "https://elciudadanoweb.com/la-potencia-del-sector-asociativo-en-la-vidriera-se-celebra-congreso-internacional-de-cooperativas-y-mutuales/"
     },
     {
       tipo: "placa", etiqueta: "Placa · Dato",
