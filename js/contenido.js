@@ -89,7 +89,7 @@ window.CONTENIDO = {
     },
     {
       titulo: "Vincular Inteligente 2026", lugar: "Rosario", tipo: "Conferencia",
-      fecha: null, fechaTexto: "2026", tema: "IA y producción · Redjar",
+      fecha: "2026-05-22", fechaTexto: "22 de mayo de 2026", tema: "IA y producción · Redjar",
       foto: "img/eventos/vincular.jpg", alt: "Manuel Leiva en Vincular Inteligente 2026", posicion: "50% 25%",
       quien: "manuel", proximo: false
     },
@@ -101,7 +101,7 @@ window.CONTENIDO = {
     },
     {
       titulo: "JOC 2026 · ASCOOP", lugar: "Cartagena, Colombia", tipo: "Conferencia",
-      fecha: null, fechaTexto: "2026", tema: "Cooperar, construir y fortalecer las redes cooperativas",
+      fecha: "2026-04-16", fechaFin: "2026-04-17", fechaTexto: "16 y 17 de abril de 2026", tema: "Cooperar, construir y fortalecer las redes cooperativas",
       foto: "img/eventos/joc-patio.jpg", alt: "Manuel Leiva presentando FACTTIC y PATIO en el escenario",
       quien: "manuel", proximo: false
     },
