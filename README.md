@@ -51,9 +51,13 @@ Instagram no permite mostrar el perfil completo sin una API. Hay dos caminos:
 1. **Simple (ya implementado):** pegá en `instagramPosts` los links de los posts o reels que quieras mostrar. La web los muestra con el embed oficial de Instagram. Mientras la lista esté vacía, se ven las placas de diseño.
 2. **Automático (activo):** `instagramFeedUrl` apunta al JSON feed de Behold (plan gratis: 6 posts y 1.200 vistas por mes; si se pasa, el servicio se pausa hasta el mes siguiente y la web vuelve sola a las placas de diseño).
 
+### Videos (YouTube)
+Sección "Videos": reproductor grande y lista. Se cargan en `videos` de `contenido.js` (`id` del video, `titulo`, `medio`, opcional `inicio` en segundos y `descripcion`). El de arriba de la lista es el que se ve grande al entrar. El reproductor de YouTube recién se carga cuando alguien toca play.
+
 ### TikTok
-- Con `mostrarPerfilTiktok: true` y la lista `tiktokVideos` vacía, se muestra el embed oficial del perfil @manuleiva91 con sus últimos videos (se actualiza solo).
-- Si preferís elegir videos puntuales, pegá sus links en `tiktokVideos`.
+- Con links en `tiktokVideos` (hasta 8) se muestran los reproductores oficiales de TikTok en formato vertical. Hay que sumar el link a mano cuando se sube un video nuevo.
+- `tiktokModo: "tarjetas"` cambia a tarjetas con foto (cada video como bloque `{ url, foto, titulo }`, con la miniatura en `img/tiktok/`). TikTok no deja pedir la miniatura desde el navegador, por eso hay que guardarla.
+- Con la lista vacía se muestra una tarjeta que lleva al perfil, o el embed oficial (caja blanca, no se puede estilizar) si `mostrarPerfilTiktok: true`.
 
 ### Newsletter
 El formulario usa el diseño de la web y envía los datos a **EnvíaloSimple** (`newsletterEnvialo` en `contenido.js`: `administratorId` y `formId`, que salen del código de instalación del formulario). Pide un captcha de imagen, que se carga recién cuando alguien toca el campo de email. Si `newsletterEnvialo` queda vacío, el botón abre un mail. La automatización de bienvenida y la doble confirmación se configuran en el panel de EnvíaloSimple, no en el código.
@@ -68,6 +72,8 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 - [ ] Probar un mail desde otra cuenta a `hola@manuleiva.com` y confirmar que llega a la casilla de Redjar. (Los MX de ImprovMX ya están publicados en los tres servidores de Donweb.)
 - [ ] Cargar los otros 3 registros A de GitHub Pages (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno.
 - [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta: tocar "Verificar dominio" en EnvíaloSimple (el TXT `domain_verification.SjYbTA` ya está publicado en Donweb), cargar el DKIM si lo pide, y definir la automatización de bienvenida.
+- [ ] **Descripciones de los videos:** 8 de los 9 tienen solo una línea con datos del medio. Completar con lo que Manuel dice en cada uno (pegar la transcripción o 1–2 frases por video).
+- [ ] Decidir si los temas de "De qué hablo" filtran "Lo último" (hoy los cuatro llevan a la misma sección).
 - [ ] **Sección sobre Redjar** en la web (por ahora solo hay un link en "Hagamos contacto").
 - [ ] Cambiar el mail de contacto a `hola@manuleiva.com` cuando el reenvío funcione.
 - [ ] Confirmar la cifra de 400.000 puestos de trabajo (Foro Valor Argentino) y el año de fundación de FACTTIC (la web dice 2012; otras fuentes, 2011).

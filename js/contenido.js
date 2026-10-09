@@ -36,15 +36,24 @@ window.CONTENIDO = {
      id: lo que va después de "v=" o de "youtu.be/" en el link. inicio: segundo desde el que arranca (opcional).
      El primero de la lista es el que se ve grande al entrar. Para sumar uno: copiá un bloque { ... }. */
   videos: [
-    { id: "LvAcQPlVugo", titulo: "“Los MEJORES programadores son ARGENTINOS”: Leiva y las cooperativas tecnológicas", medio: "La Capital Más · In Situ" },
-    { id: "smOKQfChGpA", titulo: "Manuel Leiva, presidente de FACTTIC", medio: "COLSECOR" },
-    { id: "XU4L8z04wy8", titulo: "Argentina puede ser potencia en tecnología", medio: "RosarioPlus 98.9 · Con Códigos" },
-    { id: "3PVtghud0dQ", inicio: 783, titulo: "Cruje el mercado laboral: una oportunidad para las cooperativas", medio: "El Ciudadano · Economía" },
-    { id: "lniJPU5Lj7s", titulo: "Minga: Manuel Leiva", medio: "Radio Kermés" },
-    { id: "a-VB6cgU-bY", inicio: 17, titulo: "Nos visita Manu Leiva", medio: "Mística TV · PLR" },
-    { id: "OS-mEOZLl-4", inicio: 5921, titulo: "Comisión de Asuntos Cooperativos, Mutuales y ONG (22/07/2025)", medio: "Honorable Cámara de Diputados de la Nación" },
-    { id: "e5WDrouQVm4", titulo: "Taller de Formación Dirigencial: segundo panel", medio: "Cooperar" },
-    { id: "pY3f_lAR2DM", titulo: "Las mentiras del Vocero sobre las cooperativas de trabajo", medio: "Canal de Claudio Andrés De Luca" }
+    { id: "LvAcQPlVugo", titulo: "“Los MEJORES programadores son ARGENTINOS”: Leiva y las cooperativas tecnológicas", medio: "La Capital Más · In Situ",
+      descripcion: "Las cooperativas pueden ayudar a que la Argentina sea una potencia tecnológica si se prioriza la soberanía tecnológica y el desarrollo local. Pueden competir con empresas extranjeras en eficiencia y rapidez; el principal obstáculo, plantea Manuel, es la falta de planificación nacional y de decisión política." },
+    { id: "smOKQfChGpA", titulo: "Manuel Leiva, presidente de FACTTIC", medio: "COLSECOR",
+      descripcion: "Manuel Leiva, presentado como presidente de FACTTIC, la federación argentina de cooperativas de trabajo de tecnología, innovación y conocimiento." },
+    { id: "XU4L8z04wy8", titulo: "Argentina puede ser potencia en tecnología", medio: "RosarioPlus 98.9 · Con Códigos",
+      descripcion: "Entrevista en el programa «Con Códigos» de RosarioPlus 98.9, con el eje puesto en que la Argentina puede ser potencia en tecnología." },
+    { id: "3PVtghud0dQ", inicio: 783, titulo: "Cruje el mercado laboral: una oportunidad para las cooperativas", medio: "El Ciudadano · Economía",
+      descripcion: "Fragmento del programa de Economía de El Ciudadano sobre el mercado laboral y el lugar de las cooperativas. El video arranca en el minuto 13:03." },
+    { id: "lniJPU5Lj7s", titulo: "Minga: Manuel Leiva", medio: "Radio Kermés",
+      descripcion: "Charla con Manuel Leiva en «Minga», el programa de Radio Kermés." },
+    { id: "a-VB6cgU-bY", inicio: 17, titulo: "Nos visita Manu Leiva", medio: "Mística TV · PLR",
+      descripcion: "Visita de Manuel Leiva a PLR, el programa de Mística TV." },
+    { id: "OS-mEOZLl-4", inicio: 5921, titulo: "Comisión de Asuntos Cooperativos, Mutuales y ONG (22/07/2025)", medio: "Honorable Cámara de Diputados de la Nación",
+      descripcion: "Reunión completa de la Comisión de Asuntos Cooperativos, Mutuales y de ONG de la Cámara de Diputados, del 22 de julio de 2025. El video se abre en el minuto 1:38:41." },
+    { id: "e5WDrouQVm4", titulo: "Taller de Formación Dirigencial: segundo panel", medio: "Cooperar",
+      descripcion: "Segundo panel del Taller de Formación Dirigencial organizado por Cooperar." },
+    { id: "pY3f_lAR2DM", titulo: "Las mentiras del Vocero sobre las cooperativas de trabajo", medio: "Canal de Claudio Andrés De Luca",
+      descripcion: "Manuel Leiva responde a lo que dijo el vocero sobre las cooperativas de trabajo." }
   ],
 
   /* Videos de TikTok a mostrar (hasta 8). Cada uno puede ser solo el link, o un bloque con foto y texto:

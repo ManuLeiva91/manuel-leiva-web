@@ -183,6 +183,16 @@
   }
   /* TikTok nativo: tarjetas verticales. Cada video puede ser un link ("https://...") o un bloque
      { url, foto, titulo } con la miniatura guardada en img/tiktok/ (TikTok no deja pedirla desde el navegador). */
+  function renderTiktokPlayers(box, vids) {
+    box.className = 'ttplayers'; box.style.gridTemplateColumns = '';
+    box.innerHTML = vids.slice(0, 8).map(function (v, i) {
+      var o = typeof v === 'string' ? { url: v } : v;
+      var m = String(o.url).match(/video\/(\d+)/); if (!m) return '';
+      return '<div class="ttp"><iframe loading="lazy" src="https://www.tiktok.com/player/v1/' + m[1] +
+        '?controls=1&progress_bar=1&play_button=1&volume_control=1&fullscreen_button=1&timestamp=0&loop=0&autoplay=0&music_info=0&description=0&rel=0&native_context_menu=1&closed_caption=0"' +
+        ' title="' + attr(o.titulo || ('Video ' + (i + 1) + ' de TikTok')) + '" allow="fullscreen; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>';
+    }).join('');
+  }
   function renderTiktokNativo(box, vids) {
     box.className = 'reels'; box.style.gridTemplateColumns = '';
     box.innerHTML = vids.slice(0, 8).map(function (v, i) {
@@ -199,7 +209,8 @@
     var user = C.redes && C.redes.tiktok;
     var vids = (C.tiktokVideos || []).filter(Boolean);
     if (vids.length) {
-      renderTiktokNativo(box, vids); return;
+      if (C.tiktokModo === 'tarjetas') renderTiktokNativo(box, vids); else renderTiktokPlayers(box, vids);
+      return;
     } else if (!C.mostrarPerfilTiktok && user) {
       box.className = 'follow'; box.style.gridTemplateColumns = '1fr'; box.style.marginTop = '0';
       box.innerHTML = '<a class="fol" href="https://www.tiktok.com/@' + attr(user) + '" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18a3 3 0 1 1-3-3"></path><path d="M9 18V4l10-1v12"></path><circle cx="16" cy="15" r="3"></circle></svg></span><div><b>Mis videos en TikTok</b><span>@' + attr(user) + '</span></div><span class="go">Ver videos →</span></a>';
@@ -224,6 +235,7 @@
       actual = i; var v = vids[i];
       $('#video-titulo').textContent = v.titulo || '';
       $('#video-medio').textContent = v.medio || '';
+      var d = $('#video-desc'); if (d) { d.textContent = v.descripcion || ''; d.hidden = !v.descripcion; }
       $$('.vitem', lista).forEach(function (b, k) { var on = k === i; b.classList.toggle('is-active', on); b.setAttribute('aria-current', on ? 'true' : 'false'); });
       if (reproducir) {
         player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0' + (v.inicio ? '&start=' + parseInt(v.inicio, 10) : '') +
