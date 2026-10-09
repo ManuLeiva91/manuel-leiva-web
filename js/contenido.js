@@ -47,10 +47,15 @@ window.CONTENIDO = {
     { id: "pY3f_lAR2DM", titulo: "Las mentiras del Vocero sobre las cooperativas de trabajo", medio: "Canal de Claudio Andrés De Luca" }
   ],
 
-  /* Videos de TikTok a mostrar. Ej: "https://www.tiktok.com/@manuleiva91/video/7412345678901234567"
-     Si la lista está vacía y mostrarPerfilTiktok es true, se muestra el perfil completo (últimos videos). */
+  /* Videos de TikTok a mostrar (hasta 8). Cada uno puede ser solo el link, o un bloque con foto y texto:
+     { url: "https://www.tiktok.com/@manuleiva91/video/ID", foto: "img/tiktok/ID.jpg", titulo: "Texto corto" }
+     Si la lista está vacía se muestra una tarjeta que lleva al perfil (o el embed oficial si mostrarPerfilTiktok es true). */
   tiktokVideos: [
-    // "https://www.tiktok.com/@manuleiva91/video/ID_DEL_VIDEO",
+    "https://www.tiktok.com/@manuleiva91/video/7689537806137429256",
+    "https://www.tiktok.com/@manuleiva91/video/7689537489941351698",
+    "https://www.tiktok.com/@manuleiva91/video/7689536131280440628",
+    "https://www.tiktok.com/@manuleiva91/video/7631280980610911509",
+    "https://www.tiktok.com/@manuleiva91/video/7462116471871737093"
   ],
   mostrarPerfilTiktok: false, /* true = embed oficial del perfil (fondo blanco, no se puede estilizar) */
 

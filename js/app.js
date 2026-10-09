@@ -181,28 +181,25 @@
         '<span class="ring" style="background:' + attr(p.aro) + '"></span>' + inner + '</a>';
     }).join('');
   }
-  /* TikTok nativo: tarjetas verticales con la miniatura y el texto de cada video (oEmbed oficial) */
-  function renderTiktokNativo(box, vids, user) {
+  /* TikTok nativo: tarjetas verticales. Cada video puede ser un link ("https://...") o un bloque
+     { url, foto, titulo } con la miniatura guardada en img/tiktok/ (TikTok no deja pedirla desde el navegador). */
+  function renderTiktokNativo(box, vids) {
     box.className = 'reels'; box.style.gridTemplateColumns = '';
-    box.innerHTML = vids.slice(0, 8).map(function (u) {
-      return '<a class="reel" href="' + attr(u) + '" target="_blank" rel="noopener" style="background:#4A2270">' + PLAY.replace('class="play"', 'class="play" style="width:48px;height:48px"') + '<span class="cap">Ver en TikTok</span></a>';
+    box.innerHTML = vids.slice(0, 8).map(function (v, i) {
+      var o = typeof v === 'string' ? { url: v } : v;
+      var img = o.foto ? '<img loading="lazy" src="' + attr(o.foto) + '" alt="">' : '';
+      var fondo = o.foto ? '#4A2270' : 'linear-gradient(160deg,#4A2270 0%,#88155D 100%)';
+      return '<a class="reel" href="' + attr(o.url) + '" target="_blank" rel="noopener" style="background:' + fondo + '">' + img +
+        PLAY.replace('class="play"', 'class="play" style="width:48px;height:48px"') +
+        '<span class="cap">' + attr(o.titulo || ('Video ' + (i + 1) + ' · Ver en TikTok')) + '</span></a>';
     }).join('');
-    $$('.reel', box).forEach(function (a, i) {
-      if (!window.fetch) return;
-      fetch('https://www.tiktok.com/oembed?url=' + encodeURIComponent(vids[i]))
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function (j) {
-          if (j.thumbnail_url) { var im = new Image(); im.alt = ''; im.loading = 'lazy'; im.src = j.thumbnail_url; a.insertBefore(im, a.firstChild); }
-          var cap = $('.cap', a); if (cap && j.title) cap.textContent = j.title;
-        }).catch(function () { /* queda la tarjeta con el texto "Ver en TikTok" */ });
-    });
   }
   function renderTiktok() {
     var box = $('#tiktok'); if (!box) return;
     var user = C.redes && C.redes.tiktok;
     var vids = (C.tiktokVideos || []).filter(Boolean);
     if (vids.length) {
-      renderTiktokNativo(box, vids, user); return;
+      renderTiktokNativo(box, vids); return;
     } else if (!C.mostrarPerfilTiktok && user) {
       box.className = 'follow'; box.style.gridTemplateColumns = '1fr'; box.style.marginTop = '0';
       box.innerHTML = '<a class="fol" href="https://www.tiktok.com/@' + attr(user) + '" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18a3 3 0 1 1-3-3"></path><path d="M9 18V4l10-1v12"></path><circle cx="16" cy="15" r="3"></circle></svg></span><div><b>Mis videos en TikTok</b><span>@' + attr(user) + '</span></div><span class="go">Ver videos →</span></a>';
