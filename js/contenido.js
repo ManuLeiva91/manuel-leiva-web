@@ -131,9 +131,14 @@ window.CONTENIDO = {
       titulo: "La salida es asociativa", detalle: "El Eslabón · 25 de julio de 2026", url: "https://elesla.com/2026/07/25/la-salida-es-asociativa/"
     },
     {
+      tipo: "nota", etiqueta: "Nota · Cooperativismo tecnológico",
+      foto: "img/retrato.jpg", alt: "Retrato de Manuel Leiva", posicion: "50% 20%",
+      titulo: "Cooperativismo tecnológico: el potencial argentino para ser potencia mundial", detalle: "La Capital · 4 de agosto de 2026", url: "https://www.lacapital.com.ar/la-capital/cooperativismo-tecnologico-el-potencial-argentino-ser-potencia-mundial-n10273022.html"
+    },
+    {
       tipo: "video", etiqueta: "Video",
       foto: "img/plenario-facttic.jpg", alt: "Plenario de FACTTIC en Rosario",
-      titulo: "Plenario FACTTIC en Rosario", detalle: "[FECHA]", url: "#"
+      titulo: "Plenario FACTTIC en Rosario", detalle: "Diciembre de 2023", url: "https://www.instagram.com/facttic.ar/"
     },
     {
       tipo: "nota", etiqueta: "Nota · Economía social",
@@ -147,8 +152,8 @@ window.CONTENIDO = {
     },
     {
       tipo: "video", etiqueta: "Video · Entrevista",
-      foto: "img/eventos/congreso-panel.jpg", alt: "Panel del Congreso Internacional de Cooperativas y Mutuales",
-      titulo: "[Título de la entrevista]", detalle: "[MEDIO] · [FECHA]", url: "#"
+      foto: "img/escenario.jpg", alt: "Manuel Leiva con el micrófono en un escenario", posicion: "50% 30%",
+      titulo: "“Los MEJORES programadores son ARGENTINOS”: LEIVA y las cooperativas tecnológicas", detalle: "La Capital Más · In Situ", url: "https://www.youtube.com/watch?v=LvAcQPlVugo"
     }
   ],
 
