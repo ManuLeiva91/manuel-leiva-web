@@ -69,8 +69,10 @@ window.CONTENIDO = {
     },
     {
       titulo: "Cuyo Tech Week", lugar: "Mendoza", tipo: "Conferencia",
-      fecha: null, fechaTexto: "2026 · [FECHA]", proximo: true,
-      tema: "Cooperar es mejor que competir", quien: "manuel"
+      fecha: "2026-10-07", fechaTexto: "7 de octubre de 2026",
+      tema: "Cooperar es mejor que competir",
+      foto: "img/eventos/cuyo-tech-week.jpg", alt: "Manuel Leiva exponiendo en Cuyo Tech Week, Mendoza", posicion: "50% 25%",
+      quien: "manuel"
     },
     {
       titulo: "Asamblea ACI", lugar: "Panamá", tipo: "Asamblea",
