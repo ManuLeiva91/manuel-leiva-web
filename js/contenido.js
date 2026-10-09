@@ -32,12 +32,27 @@ window.CONTENIDO = {
      Si queda vacía o el servicio falla, se muestran instagramPosts o las placas de diseño. */
   instagramFeedUrl: "https://feeds.behold.so/NdjWYisAG20rPHu0nB39",
 
+  /* ---------- Videos de YouTube (sección "Videos") ----------
+     id: lo que va después de "v=" o de "youtu.be/" en el link. inicio: segundo desde el que arranca (opcional).
+     El primero de la lista es el que se ve grande al entrar. Para sumar uno: copiá un bloque { ... }. */
+  videos: [
+    { id: "LvAcQPlVugo", titulo: "“Los MEJORES programadores son ARGENTINOS”: Leiva y las cooperativas tecnológicas", medio: "La Capital Más · In Situ" },
+    { id: "smOKQfChGpA", titulo: "Manuel Leiva, presidente de FACTTIC", medio: "COLSECOR" },
+    { id: "XU4L8z04wy8", titulo: "Argentina puede ser potencia en tecnología", medio: "RosarioPlus 98.9 · Con Códigos" },
+    { id: "3PVtghud0dQ", inicio: 783, titulo: "Cruje el mercado laboral: una oportunidad para las cooperativas", medio: "El Ciudadano · Economía" },
+    { id: "lniJPU5Lj7s", titulo: "Minga: Manuel Leiva", medio: "Radio Kermés" },
+    { id: "a-VB6cgU-bY", inicio: 17, titulo: "Nos visita Manu Leiva", medio: "Mística TV · PLR" },
+    { id: "OS-mEOZLl-4", inicio: 5921, titulo: "Comisión de Asuntos Cooperativos, Mutuales y ONG (22/07/2025)", medio: "Honorable Cámara de Diputados de la Nación" },
+    { id: "e5WDrouQVm4", titulo: "Taller de Formación Dirigencial: segundo panel", medio: "Cooperar" },
+    { id: "pY3f_lAR2DM", titulo: "Las mentiras del Vocero sobre las cooperativas de trabajo", medio: "Canal de Claudio Andrés De Luca" }
+  ],
+
   /* Videos de TikTok a mostrar. Ej: "https://www.tiktok.com/@manuleiva91/video/7412345678901234567"
      Si la lista está vacía y mostrarPerfilTiktok es true, se muestra el perfil completo (últimos videos). */
   tiktokVideos: [
     // "https://www.tiktok.com/@manuleiva91/video/ID_DEL_VIDEO",
   ],
-  mostrarPerfilTiktok: true,
+  mostrarPerfilTiktok: false, /* true = embed oficial del perfil (fondo blanco, no se puede estilizar) */
 
   /* Newsletter (EnvíaloSimple): los datos salen del código de instalación del formulario:
      .../AdministratorID/205164/FormID/1/... El formulario usa el diseño de esta web

@@ -67,7 +67,7 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 
 - [ ] Probar un mail desde otra cuenta a `hola@manuleiva.com` y confirmar que llega a la casilla de Redjar. (Los MX de ImprovMX ya están publicados en los tres servidores de Donweb.)
 - [ ] Cargar los otros 3 registros A de GitHub Pages (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno.
-- [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta revisar que el DKIM esté activo y definir la automatización de bienvenida.
+- [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta: tocar "Verificar dominio" en EnvíaloSimple (el TXT `domain_verification.SjYbTA` ya está publicado en Donweb), cargar el DKIM si lo pide, y definir la automatización de bienvenida.
 - [ ] **Sección sobre Redjar** en la web (por ahora solo hay un link en "Hagamos contacto").
 - [ ] Cambiar el mail de contacto a `hola@manuleiva.com` cuando el reenvío funcione.
 - [ ] Confirmar la cifra de 400.000 puestos de trabajo (Foro Valor Argentino) y el año de fundación de FACTTIC (la web dice 2012; otras fuentes, 2011).

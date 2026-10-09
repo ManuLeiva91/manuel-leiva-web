@@ -181,21 +181,73 @@
         '<span class="ring" style="background:' + attr(p.aro) + '"></span>' + inner + '</a>';
     }).join('');
   }
+  /* TikTok nativo: tarjetas verticales con la miniatura y el texto de cada video (oEmbed oficial) */
+  function renderTiktokNativo(box, vids, user) {
+    box.className = 'reels'; box.style.gridTemplateColumns = '';
+    box.innerHTML = vids.slice(0, 8).map(function (u) {
+      return '<a class="reel" href="' + attr(u) + '" target="_blank" rel="noopener" style="background:#4A2270">' + PLAY.replace('class="play"', 'class="play" style="width:48px;height:48px"') + '<span class="cap">Ver en TikTok</span></a>';
+    }).join('');
+    $$('.reel', box).forEach(function (a, i) {
+      if (!window.fetch) return;
+      fetch('https://www.tiktok.com/oembed?url=' + encodeURIComponent(vids[i]))
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (j) {
+          if (j.thumbnail_url) { var im = new Image(); im.alt = ''; im.loading = 'lazy'; im.src = j.thumbnail_url; a.insertBefore(im, a.firstChild); }
+          var cap = $('.cap', a); if (cap && j.title) cap.textContent = j.title;
+        }).catch(function () { /* queda la tarjeta con el texto "Ver en TikTok" */ });
+    });
+  }
   function renderTiktok() {
     var box = $('#tiktok'); if (!box) return;
     var user = C.redes && C.redes.tiktok;
     var vids = (C.tiktokVideos || []).filter(Boolean);
     if (vids.length) {
-      box.innerHTML = vids.map(function (u) {
-        var m = u.match(/video\/(\d+)/); var id = m ? m[1] : '';
-        return '<blockquote class="tiktok-embed" cite="' + attr(u) + '" data-video-id="' + id + '" style="max-width:605px;min-width:288px"><section><a href="' + attr(u) + '" target="_blank" rel="noopener">Ver en TikTok</a></section></blockquote>';
-      }).join('');
+      renderTiktokNativo(box, vids, user); return;
+    } else if (!C.mostrarPerfilTiktok && user) {
+      box.className = 'follow'; box.style.gridTemplateColumns = '1fr'; box.style.marginTop = '0';
+      box.innerHTML = '<a class="fol" href="https://www.tiktok.com/@' + attr(user) + '" target="_blank" rel="noopener"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18a3 3 0 1 1-3-3"></path><path d="M9 18V4l10-1v12"></path><circle cx="16" cy="15" r="3"></circle></svg></span><div><b>Mis videos en TikTok</b><span>@' + attr(user) + '</span></div><span class="go">Ver videos →</span></a>';
+      return;
     } else if (C.mostrarPerfilTiktok && user) {
       box.style.gridTemplateColumns = '1fr';
       box.innerHTML = '<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@' + attr(user) + '" data-unique-id="' + attr(user) + '" data-embed-type="creator" style="max-width:780px;min-width:288px;width:100%">' +
         '<section><a target="_blank" rel="noopener" href="https://www.tiktok.com/@' + attr(user) + '?refer=creator_embed">@' + user + '</a></section></blockquote>';
     } else { box.hidden = true; return; }
     cargarScript('https://www.tiktok.com/embed.js', 'tt-embed');
+  }
+
+  /* ---------- Videos de YouTube ---------- */
+  function renderVideos() {
+    var sec = $('#videos'), lista = $('#video-lista'), player = $('#video-player');
+    var vids = (C.videos || []).filter(function (v) { return v && v.id; });
+    if (!sec || !lista || !player) return;
+    if (!vids.length) { sec.hidden = true; var l = $('a[href="#videos"]'); if (l) l.hidden = true; return; }
+    var actual = 0;
+    function miniatura(v) { return 'https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg'; }
+    function mostrar(i, reproducir) {
+      actual = i; var v = vids[i];
+      $('#video-titulo').textContent = v.titulo || '';
+      $('#video-medio').textContent = v.medio || '';
+      $$('.vitem', lista).forEach(function (b, k) { var on = k === i; b.classList.toggle('is-active', on); b.setAttribute('aria-current', on ? 'true' : 'false'); });
+      if (reproducir) {
+        player.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0' + (v.inicio ? '&start=' + parseInt(v.inicio, 10) : '') +
+          '" title="' + attr(v.titulo) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      } else {
+        player.innerHTML = '<button class="vposter" type="button" aria-label="Reproducir: ' + attr(v.titulo) + '"><img src="' + attr(miniatura(v)) + '" alt="">' + PLAY + '</button>';
+        $('.vposter', player).addEventListener('click', function () { mostrar(actual, true); });
+      }
+    }
+    lista.innerHTML = vids.map(function (v, i) {
+      return '<button class="vitem" type="button" role="listitem" data-i="' + i + '"><span class="vt"><img loading="lazy" src="' + attr(miniatura(v)) + '" alt=""></span>' +
+        '<span><b>' + attr(v.titulo) + '</b><small>' + attr(v.medio || '') + '</small></span></button>';
+    }).join('');
+    $$('.vitem', lista).forEach(function (b) {
+      b.addEventListener('click', function () {
+        mostrar(+b.getAttribute('data-i'), true);
+        var r = player.getBoundingClientRect();
+        if (r.top < 70 || r.bottom > window.innerHeight) player.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      });
+    });
+    mostrar(0, false);
   }
 
   /* ---------- Menú mobile ---------- */
@@ -307,7 +359,7 @@
 
   function init() {
     renderDestacado(); renderProxima(); renderAgenda(); renderPasados(); renderPresencia();
-    renderFeed(); initFiltros(); renderInstagram(); renderTiktok();
+    renderFeed(); initFiltros(); renderVideos(); renderInstagram(); renderTiktok();
     initMenu(); initNewsletter(); initReveal();
     var y = $('#anio'); if (y) y.textContent = new Date().getFullYear();
   }
