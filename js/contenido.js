@@ -30,7 +30,7 @@ window.CONTENIDO = {
   /* Instagram automático (Behold, JSON feed): pegá acá la URL del feed, ej:
      "https://feeds.behold.so/XXXXXXXX". Si está cargada, tiene prioridad sobre instagramPosts.
      Si queda vacía o el servicio falla, se muestran instagramPosts o las placas de diseño. */
-  instagramFeedUrl: "",
+  instagramFeedUrl: "https://feeds.behold.so/NdjWYisAG20rPHu0nB39",
 
   /* Videos de TikTok a mostrar. Ej: "https://www.tiktok.com/@manuleiva91/video/7412345678901234567"
      Si la lista está vacía y mostrarPerfilTiktok es true, se muestra el perfil completo (últimos videos). */
