@@ -125,8 +125,31 @@
     if (document.getElementById(id)) return;
     var s = document.createElement('script'); s.async = true; s.src = src; s.id = id; document.body.appendChild(s);
   }
+  function renderInstagramFeed(box, posts) {
+    box.className = 'placas';
+    box.innerHTML = posts.slice(0, 6).map(function (p) {
+      var s = p.sizes && (p.sizes.medium || p.sizes.large || p.sizes.small);
+      var img = (s && s.mediaUrl) || p.thumbnailUrl || p.mediaUrl || '';
+      var txt = p.prunedCaption || p.caption || 'Publicación de Instagram';
+      return '<a class="placa" href="' + attr(p.permalink) + '" target="_blank" rel="noopener" style="background:#15111A;padding:0">' +
+        '<img loading="lazy" src="' + attr(img) + '" alt="' + attr(txt.slice(0, 120)) + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></a>';
+    }).join('');
+  }
   function renderInstagram() {
     var box = $('#instagram'); if (!box) return;
+    if (C.instagramFeedUrl && window.fetch) {
+      fetch(C.instagramFeedUrl).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+          var posts = (Array.isArray(data) ? data : data.posts || []).filter(function (p) { return p && p.permalink && (p.thumbnailUrl || p.mediaUrl || p.sizes); });
+          if (!posts.length) throw new Error('feed vacío');
+          renderInstagramFeed(box, posts);
+        })
+        .catch(function () { renderInstagramFallback(box); });
+      return;
+    }
+    renderInstagramFallback(box);
+  }
+  function renderInstagramFallback(box) {
     var posts = (C.instagramPosts || []).filter(Boolean);
     if (posts.length) {
       box.className = 'embeds-ig';
@@ -206,7 +229,18 @@
   function initNewsletter() {
     var f = $('#newsletter'); if (!f) return;
     var msg = $('#newsletter-msg');
-    if (C.newsletterAction) { f.action = C.newsletterAction; f.method = 'post'; f.target = '_blank'; return; }
+    if (C.newsletterAction) {
+      f.action = C.newsletterAction; f.method = 'post'; f.target = '_blank';
+      $('#v2-mail').name = 'EMAIL'; /* nombre de campo que exige Mailchimp */
+      var m = C.newsletterAction.match(/[?&]u=([^&]+)&(?:amp;)?id=([^&]+)/);
+      if (m) { /* campo trampa anti-bots de Mailchimp: tiene que ir vacío y oculto */
+        var hp = document.createElement('div'); hp.setAttribute('aria-hidden', 'true'); hp.style.cssText = 'position:absolute;left:-5000px';
+        hp.innerHTML = '<input type="text" name="b_' + attr(m[1]) + '_' + attr(m[2]) + '" tabindex="-1" value="" autocomplete="off">';
+        f.appendChild(hp);
+      }
+      f.addEventListener('submit', function () { msg.textContent = 'Listo: se abrió Mailchimp para confirmar tu suscripción. Revisá tu correo.'; });
+      return;
+    }
     f.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var mail = $('#v2-mail').value.trim();

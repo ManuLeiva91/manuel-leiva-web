@@ -27,6 +27,11 @@ window.CONTENIDO = {
     // "https://www.instagram.com/p/CODIGO/",
   ],
 
+  /* Instagram automático (Behold, JSON feed): pegá acá la URL del feed, ej:
+     "https://feeds.behold.so/XXXXXXXX". Si está cargada, tiene prioridad sobre instagramPosts.
+     Si queda vacía o el servicio falla, se muestran instagramPosts o las placas de diseño. */
+  instagramFeedUrl: "",
+
   /* Videos de TikTok a mostrar. Ej: "https://www.tiktok.com/@manuleiva91/video/7412345678901234567"
      Si la lista está vacía y mostrarPerfilTiktok es true, se muestra el perfil completo (últimos videos). */
   tiktokVideos: [
@@ -34,8 +39,10 @@ window.CONTENIDO = {
   ],
   mostrarPerfilTiktok: true,
 
-  /* Newsletter: pegá acá la URL de "action" del formulario de tu servicio
-     (Buttondown, Mailchimp, Brevo...). Si queda vacío, el botón abre un mail. */
+  /* Newsletter (Mailchimp): pegá acá la URL de "action" del formulario embebido
+     (Audience → Signup forms → Embedded forms), ej:
+     "https://xxxx.us21.list-manage.com/subscribe/post?u=XXXX&id=YYYY&f_id=ZZZZ".
+     Si queda vacío, el botón abre un mail. */
   newsletterAction: "",
 
   /* ---------- Destacado del inicio ---------- */
