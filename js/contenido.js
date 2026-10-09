@@ -100,8 +100,8 @@ window.CONTENIDO = {
       quien: "manuel", proximo: false
     },
     {
-      titulo: "JOC 2025", lugar: "Cartagena, Colombia", tipo: "Conferencia",
-      fecha: null, fechaTexto: "2025", tema: "Cooperar, construir y fortalecer las redes cooperativas",
+      titulo: "JOC 2026 · ASCOOP", lugar: "Cartagena, Colombia", tipo: "Conferencia",
+      fecha: null, fechaTexto: "2026", tema: "Cooperar, construir y fortalecer las redes cooperativas",
       foto: "img/eventos/joc-patio.jpg", alt: "Manuel Leiva presentando FACTTIC y PATIO en el escenario",
       quien: "manuel", proximo: false
     },
