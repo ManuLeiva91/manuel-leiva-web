@@ -120,6 +120,11 @@ window.CONTENIDO = {
      tipo: "nota" | "video" | "placa". Las placas no llevan foto: llevan colores y titular. */
   contenidos: [
     {
+      tipo: "nota", etiqueta: "Nota · IA y trabajo",
+      foto: "img/eventos/congreso-panel.jpg", alt: "Panel del Congreso Internacional de Cooperativas y Mutuales",
+      titulo: "Podemos desarrollar una IA argentina", detalle: "Revista Acción · 24 de septiembre de 2026", url: "https://accion.coop/2026/09/24/pais/voces/podemos-desarrollar-una-ia-argentina/"
+    },
+    {
       tipo: "placa", etiqueta: "Placa · Instagram",
       fondo: "#88155D", titular: "Un <span style='color:#8FD3F4'>argentino</span> vuelve a presidir el cooperativismo mundial",
       titulo: "No es un logro individual: es el reconocimiento a un modelo",
