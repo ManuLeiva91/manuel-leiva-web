@@ -65,9 +65,9 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 
 ## Tareas futuras
 
-- [ ] **DNS Donweb:** confirmar que los MX y el TXT de ImprovMX estén publicados en los tres servidores (`ns1`, `ns2`, `ns3.hostmar.com`). A la última revisión solo `ns2` los tenía. Si no se sincronizan, escribir a soporte de Donweb. Probar con un mail a `hola@manuleiva.com`.
+- [ ] Probar un mail desde otra cuenta a `hola@manuleiva.com` y confirmar que llega a la casilla de Redjar. (Los MX de ImprovMX ya están publicados en los tres servidores de Donweb.)
 - [ ] Cargar los otros 3 registros A de GitHub Pages (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno.
-- [ ] **Newsletter:** conectar EnvíaloSimple (reemplaza a Mailchimp). Necesita lista, formulario HTML y remitente `hola@manuleiva.com` verificado.
+- [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta revisar que el DKIM esté activo y definir la automatización de bienvenida.
 - [ ] **Sección sobre Redjar** en la web (por ahora solo hay un link en "Hagamos contacto").
 - [ ] Cambiar el mail de contacto a `hola@manuleiva.com` cuando el reenvío funcione.
 - [ ] Confirmar la cifra de 400.000 puestos de trabajo (Foro Valor Argentino) y el año de fundación de FACTTIC (la web dice 2012; otras fuentes, 2011).
