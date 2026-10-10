@@ -1,4 +1,4 @@
-# Web de Manuel Leiva
+﻿# Web de Manuel Leiva
 
 Sitio estático en HTML, CSS y JavaScript, sin dependencias ni instalación.
 Diseño: versión V2 del canvas "Manuel Leiva · Landing".
@@ -72,14 +72,14 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 
 ## Tareas futuras
 
-- [ ] Probar un mail desde otra cuenta a `hola@manuleiva.com` y confirmar que llega a la casilla de Redjar. (Los MX de ImprovMX ya están publicados en los tres servidores de Donweb.)
-- [ ] Cargar los otros 3 registros A de GitHub Pages (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno.
-- [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta: tocar "Verificar dominio" en EnvíaloSimple (el TXT `domain_verification.SjYbTA` ya está publicado en Donweb), cargar el DKIM si lo pide, y definir la automatización de bienvenida.
-- [ ] **Descripciones de los videos:** 8 de los 9 tienen solo una línea con datos del medio. Completar con lo que Manuel dice en cada uno (pegar la transcripción o 1–2 frases por video).
+- [ ] Cargar los otros 3 registros A de GitHub Pages en Donweb (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno. Es opcional, da redundancia.
+- [ ] **Descripciones de los videos:** 8 de los 9 tienen solo una línea con datos del medio. Completar con lo que Manuel dice en cada uno.
 - [ ] Decidir si los temas de "De qué hablo" filtran "Lo último" (hoy los cuatro llevan a la misma sección).
-- [ ] **Sección "Asociado a Redjar":** ya publicada. Falta enriquecer la historia (hoy tiene 4 hitos: 2015, Foro ASETT 2025, comité del CICM 2026 y hoy) con cómo nació la cooperativa, y evaluar sumar logos de clientes y testimonios (están en redjar.com.ar).
-- [ ] Cambiar el mail de contacto a `hola@manuleiva.com` cuando el reenvío funcione.
-- [ ] Confirmar la cifra de 400.000 puestos de trabajo (Foro Valor Argentino) y el año de fundación de FACTTIC (la web dice 2012; otras fuentes, 2011).
 - [ ] Fecha de la entrevista de La Capital Más ("In Situ") y de "Las cooperativas construyen un mundo mejor".
 - [ ] Video del Plenario FACTTIC (hoy el tile lleva al Instagram de FACTTIC).
 - [ ] Mejorar el área táctil en mobile de los links del footer y del logo del menú.
+
+## Hecho
+
+- Dominio manuleiva.com con HTTPS, mail `hola@manuleiva.com` (reenvío con ImprovMX) y dominio autenticado en EnvíaloSimple (SPF, DKIM, DMARC).
+- Datos confirmados: +400.000 puestos de trabajo (Foro Valor Argentino) y FACTTIC fundada en 2012.

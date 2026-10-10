@@ -16,7 +16,7 @@ window.CONTENIDO = {
     instagram: "manuleiva91",
     tiktok: "manuleiva91",
     linkedin: "manuleiva",
-    email: "manuel.leiva@redjar.com.ar",
+    email: "hola@manuleiva.com",
     facttic: "https://www.facttic.org.ar"
   },
 
