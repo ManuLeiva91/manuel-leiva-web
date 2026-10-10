@@ -83,6 +83,51 @@ window.CONTENIDO = {
     url: "#charlas"
   },
 
+  /* ---------- Sección Redjar ----------
+     Fuente: redjar.com.ar (misión, visión, servicios, valores, alianzas, dirección, +10 años, +150 proyectos)
+     y datos propios (+50 asociados, desde 2015). Si se borra este bloque, la sección no se muestra. */
+  redjar: {
+    kicker: "La cooperativa donde pertenezco",
+    titulo: "Asociado a Redjar",
+    sitio: "https://www.redjar.com.ar", sitioTexto: "Conocé Redjar",
+    intro: "Somos la Cooperativa de Trabajo Redjar Ltda. Creamos soluciones tecnológicas para acompañar a empresas y organizaciones en su modernización y su transformación digital, desde la consultoría hasta la implementación.",
+    parrafos: [
+      "Somos una cooperativa de más de 50 profesionales que valora el trabajo colaborativo y la tecnología como motor de cambio.",
+      "Trabajamos como socios tecnológicos: optimizamos procesos con herramientas digitales, diseñamos soluciones a medida y acompañamos a cada cliente con equipos multidisciplinarios, experiencia comprobada y compromiso a largo plazo."
+    ],
+    foto: "img/equipo-redjar.jpg", alt: "El equipo de Redjar reunido frente a una casona en Rosario", posicion: "50% 40%",
+    foto2: "img/encuentro-escalera.jpg", alt2: "Integrantes del equipo en un encuentro, en una escalera de mármol", posicion2: "50% 30%",
+    cifras: [
+      { n: 50, prefijo: "+", texto: "asociados y asociadas" },
+      { n: 10, prefijo: "+", texto: "años de trayectoria" },
+      { n: 150, prefijo: "+", texto: "proyectos desarrollados" }
+    ],
+    historia: [
+      { anio: "2015", texto: "Redjar empieza su camino en Rosario como cooperativa de trabajo de tecnología." },
+      { anio: "Mayo 2025", texto: "Es presentada como caso de éxito en el 1º Foro Internacional ASETT, en Mondragón." },
+      { anio: "Julio 2026", texto: "Integra la comisión organizadora del Congreso Internacional de Cooperativas y Mutuales, en Rosario." },
+      { anio: "Hoy", texto: "Más de 50 asociados y asociadas. Segunda cooperativa tecnológica del país." }
+    ],
+    servicios: [
+      { t: "Consultoría tecnológica", d: "Asesoría para decidir estratégicamente, definir arquitecturas y evaluar herramientas." },
+      { t: "Desarrollo de software", d: "Aplicaciones multiplataforma de alta calidad, más mantenimiento evolutivo y correctivo." },
+      { t: "Soluciones con IA", d: "Automatización de tareas, análisis de datos e integración de IA en sistemas existentes." },
+      { t: "Migración y actualización", d: "Modernización de datos y sistemas, con integración por APIs y automatización de procesos." },
+      { t: "Infraestructura y soporte", d: "Redes, infraestructura y plataformas cloud (AWS, Azure y GCP) con foco en seguridad." },
+      { t: "Diseño y prototipado", d: "Del análisis de necesidades al diseño de interfaces, prototipos y validación de usabilidad." }
+    ],
+    modalidades: ["Staff Augmentation", "Service Management", "Llave en mano"],
+    /* Organizaciones con las que trabajamos en red. logo: ruta al SVG/PNG (se muestra translúcido); url: link opcional. */
+    alianzas: [
+      { nombre: "Polo Tecnológico Rosario", logo: "img/logos/aliados/polo-rosario.svg" },
+      { nombre: "Polo IT", logo: "img/logos/aliados/polo-bsas.svg" },
+      { nombre: "PATIO.COOP", logo: "img/logos/aliados/patio.svg" },
+      { nombre: "FACTTIC", logo: "img/logos/aliados/facttic.svg", url: "https://www.facttic.org.ar" },
+      { nombre: "Cooperar", logo: "img/logos/aliados/cooperar.svg", url: "https://www.cooperar.coop" }
+    ],
+    direccion: "Pellegrini 2446, Rosario, Santa Fe"
+  },
+
   /* ---------- Eventos ----------
      quien: "manuel"  → aparece en Agenda (si es futuro) o en "Dónde estuve" (si pasó y tiene foto)
             "facttic" → aparece solo en la fila "Presencia de FACTTIC"

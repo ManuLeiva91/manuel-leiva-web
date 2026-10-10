@@ -51,6 +51,9 @@ Instagram no permite mostrar el perfil completo sin una API. Hay dos caminos:
 1. **Simple (ya implementado):** pegá en `instagramPosts` los links de los posts o reels que quieras mostrar. La web los muestra con el embed oficial de Instagram. Mientras la lista esté vacía, se ven las placas de diseño.
 2. **Automático (activo):** `instagramFeedUrl` apunta al JSON feed de Behold (plan gratis: 6 posts y 1.200 vistas por mes; si se pasa, el servicio se pausa hasta el mes siguiente y la web vuelve sola a las placas de diseño).
 
+### Redjar
+La sección "Asociado a Redjar" sale del bloque `redjar` de `contenido.js`: `kicker`, `titulo`, `intro`, `parrafos`, `foto`/`foto2`, `cifras` (se animan al aparecer), `historia`, `servicios`, `modalidades`, `alianzas` y `direccion`. Cada alianza puede llevar `logo` (SVG o PNG con fondo transparente, se muestra en blanco translúcido) y `url`. Los logos están en `img/logos/aliados/`. Si se borra el bloque, la sección y su link del menú desaparecen.
+
 ### Videos (YouTube)
 Sección "Videos": reproductor grande y lista. Se cargan en `videos` de `contenido.js` (`id` del video, `titulo`, `medio`, opcional `inicio` en segundos y `descripcion`). El de arriba de la lista es el que se ve grande al entrar. El reproductor de YouTube recién se carga cuando alguien toca play.
 
@@ -74,7 +77,7 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 - [ ] Newsletter (EnvíaloSimple): formulario conectado y funcionando. Falta: tocar "Verificar dominio" en EnvíaloSimple (el TXT `domain_verification.SjYbTA` ya está publicado en Donweb), cargar el DKIM si lo pide, y definir la automatización de bienvenida.
 - [ ] **Descripciones de los videos:** 8 de los 9 tienen solo una línea con datos del medio. Completar con lo que Manuel dice en cada uno (pegar la transcripción o 1–2 frases por video).
 - [ ] Decidir si los temas de "De qué hablo" filtran "Lo último" (hoy los cuatro llevan a la misma sección).
-- [ ] **Sección sobre Redjar** en la web (por ahora solo hay un link en "Hagamos contacto").
+- [ ] **Sección "Asociado a Redjar":** ya publicada. Falta enriquecer la historia (hoy tiene 4 hitos: 2015, Foro ASETT 2025, comité del CICM 2026 y hoy) con cómo nació la cooperativa, y evaluar sumar logos de clientes y testimonios (están en redjar.com.ar).
 - [ ] Cambiar el mail de contacto a `hola@manuleiva.com` cuando el reenvío funcione.
 - [ ] Confirmar la cifra de 400.000 puestos de trabajo (Foro Valor Argentino) y el año de fundación de FACTTIC (la web dice 2012; otras fuentes, 2011).
 - [ ] Fecha de la entrevista de La Capital Más ("In Situ") y de "Las cooperativas construyen un mundo mejor".

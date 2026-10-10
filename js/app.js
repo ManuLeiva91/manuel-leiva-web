@@ -223,6 +223,42 @@
     cargarScript('https://www.tiktok.com/embed.js', 'tt-embed');
   }
 
+  /* ---------- Sección Redjar ---------- */
+  function renderRedjar() {
+    var R = C.redjar, sec = $('#redjar');
+    if (!sec) return;
+    if (!R) { var nl = $('a[href="#redjar"]'); if (nl) nl.hidden = true; return; }
+    function txt(id, t) { var e = $(id); if (e) e.textContent = t || ''; }
+    function pills(id, arr) { var e = $(id); if (e) e.innerHTML = (arr || []).map(function (t) { return '<span class="pill">' + attr(t) + '</span>'; }).join(''); }
+    txt('#rj-kicker', R.kicker); txt('#rj-titulo', R.titulo); txt('#rj-intro', R.intro);
+    txt('#rj-direccion', R.direccion ? 'Estamos en ' + R.direccion + '.' : '');
+    var a = $('#rj-sitio'); if (a) { if (R.sitio) { a.href = R.sitio; a.textContent = R.sitioTexto || R.sitio; } else a.hidden = true; }
+    [['#rj-foto', R.foto, R.alt, R.posicion], ['#rj-foto2', R.foto2, R.alt2, R.posicion2]].forEach(function (f) {
+      var im = $(f[0]); if (!im) return;
+      if (f[1]) { im.src = f[1]; im.alt = f[2] || ''; if (f[3]) im.style.objectPosition = f[3]; } else im.hidden = true;
+    });
+    var pp = $('#rj-parrafos');
+    if (pp) pp.innerHTML = (R.parrafos || []).map(function (t) { return '<p class="rjp">' + attr(t) + '</p>'; }).join('');
+    var c = $('#rj-cifras');
+    if (c) c.innerHTML = (R.cifras || []).map(function (x) {
+      return '<div class="stat" data-reveal><p class="d"><span data-count="' + (+x.n) + '" data-prefix="' + attr(x.prefijo || '') + '">' + attr(x.prefijo || '') + (+x.n) + '</span></p><p>' + attr(x.texto) + '</p></div>';
+    }).join('');
+    var h = $('#rj-historia');
+    if (h) h.innerHTML = (R.historia || []).map(function (x) { return '<li><b class="d">' + attr(x.anio) + '</b><p>' + attr(x.texto) + '</p></li>'; }).join('');
+    var s = $('#rj-servicios');
+    if (s) s.innerHTML = (R.servicios || []).map(function (x) { return '<div class="rjs"><h3 class="d">' + attr(x.t) + '</h3><p>' + attr(x.d) + '</p></div>'; }).join('');
+    pills('#rj-modalidades', R.modalidades);
+    var red = $('#rj-alianzas');
+    if (red) red.innerHTML = (R.alianzas || []).map(function (x) {
+      var o = typeof x === 'string' ? { nombre: x } : x;
+      var inner = o.logo ? '<img loading="lazy" src="' + attr(o.logo) + '" alt="' + attr(o.nombre) + '">' : '<span class="pill">' + attr(o.nombre) + '</span>';
+      var cls = o.logo ? 'rjlogo' : 'rjnom';
+      return o.url ? '<a class="' + cls + '" href="' + attr(o.url) + '" target="_blank" rel="noopener" title="' + attr(o.nombre) + '">' + inner + '</a>'
+                   : '<span class="' + cls + '" title="' + attr(o.nombre) + '">' + inner + '</span>';
+    }).join('');
+    sec.hidden = false;
+  }
+
   /* ---------- Videos de YouTube ---------- */
   function renderVideos() {
     var sec = $('#videos'), lista = $('#video-lista'), player = $('#video-player');
@@ -368,7 +404,7 @@
 
   function init() {
     renderDestacado(); renderProxima(); renderAgenda(); renderPasados(); renderPresencia();
-    renderFeed(); initFiltros(); renderVideos(); renderInstagram(); renderTiktok();
+    renderFeed(); initFiltros(); renderVideos(); renderRedjar(); renderInstagram(); renderTiktok();
     initMenu(); initNewsletter(); initReveal();
     var y = $('#anio'); if (y) y.textContent = new Date().getFullYear();
   }
