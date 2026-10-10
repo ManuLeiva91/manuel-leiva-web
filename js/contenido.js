@@ -80,8 +80,49 @@ window.CONTENIDO = {
     detalle: "Estación Fluvial, Rosario · 25 de julio de 2026",
     foto: "img/eventos/cicm-escenario.jpg",
     alt: "Manuel Leiva hablando en el escenario del CICM en Rosario",
-    url: "#charlas"
+    url: "charlas/"
   },
+
+  /* ---------- Blog ----------
+     Cada entrada aparece en la portada (las 3 últimas) y en /blog/.
+     categoria: "estudio" | "nota" | "opinion" | "exposicion" (arma los botones del selector en /blog/)
+     tipo: "articulo" → texto completo en su propia página (url: "blog/mi-nota.html")
+           "externa"  → nota publicada en otro medio (url: link a la nota; medio: nombre del diario)
+     fecha: "AAAA-MM-DD" o "AAAA-MM" (para ordenar y para buscadores). fechaTexto: cómo se muestra. */
+  blog: [
+    {
+      tipo: "externa", categoria: "opinion", etiqueta: "Opinión",
+      titulo: "El cooperativismo, un aliado que la acción climática no puede ignorar",
+      resumen: "La ONU reconoció al modelo cooperativo como socio clave de la Agenda 2030. Cómo aporta el cooperativismo a la acción climática, con los ejemplos de TAU y Programa Espuma, en Rosario.",
+      medio: "La Capital · FNGA", fecha: "2026-09-02", fechaTexto: "2 de septiembre de 2026",
+      foto: "img/retrato.jpg", alt: "Retrato de Manuel Leiva", posicion: "50% 18%",
+      url: "https://www.lacapital.com.ar/fnga/el-cooperativismo-un-aliado-que-la-accion-climatica-no-puede-ignorar-n10278797.html"
+    },
+    {
+      tipo: "externa", categoria: "nota", etiqueta: "Entrevista",
+      titulo: "Donde hay una necesidad, nace una cooperativa",
+      resumen: "Entrevista antes del Día Internacional de las Cooperativas: por qué es clave dar visibilidad al aporte del sector y que los gobiernos diseñen políticas específicas para un actor productivo en crecimiento.",
+      medio: "Redacción Rosario", fecha: "2025-07-07", fechaTexto: "7 de julio de 2025",
+      foto: "img/escenario.jpg", alt: "Manuel Leiva con el micrófono en un escenario", posicion: "50% 30%",
+      url: "https://redaccionrosario.com/2025/07/07/donde-hay-una-necesidad-nace-una-cooperativa/"
+    },
+    {
+      tipo: "articulo", categoria: "exposicion", etiqueta: "Exposición",
+      titulo: "La potencia de la tecnología y el impacto en la comunidad",
+      resumen: "Cómo la tecnología cooperativa puede ayudar a las cooperativas y mutuales a tener más impacto en sus comunidades: proyectos solidarios, datos de FACTTIC y la idea de cooperar entre cooperativas.",
+      fecha: "2025-06-26", fechaTexto: "26 de junio de 2025", lectura: "7 min de lectura",
+      foto: "img/eventos/mundo-mejor.jpg", alt: "Panel de cooperativas en Santa Fe", posicion: "50% 40%",
+      url: "blog/la-potencia-de-la-tecnologia-y-el-impacto-en-la-comunidad.html"
+    },
+    {
+      tipo: "articulo", categoria: "estudio", etiqueta: "Estudio",
+      titulo: "Potencialidades y desafíos del cooperativismo tecnológico",
+      resumen: "Rotación de 3,7 % en las cooperativas de FACTTIC contra 21 % en el sector IT (2023), cooperativas tecnológicas que pasaron de 59 a 150 desde 2021 y tarifas entre 9 % y 17 % más bajas. Con datos de FACTTIC, CESSI e INAES.",
+      fecha: "2024-06", fechaTexto: "Junio de 2024", lectura: "15 min de lectura",
+      foto: "img/eventos/ica-panel.jpg", alt: "Manuel Leiva en el panel Digital and New Technologies de la Alianza Cooperativa Internacional", posicion: "30% 55%",
+      url: "blog/potencialidades-y-desafios-del-cooperativismo-tecnologico.html"
+    }
+  ],
 
   /* ---------- Sección Redjar ----------
      Fuente: redjar.com.ar (misión, visión, servicios, valores, alianzas, dirección, +10 años, +150 proyectos)
@@ -128,6 +169,12 @@ window.CONTENIDO = {
     direccion: "Pellegrini 2446, Rosario, Santa Fe"
   },
 
+  /* Foto que acompaña el adelanto de "Dónde hablo" en la portada (si se borra, la sección queda sin foto) */
+  fotoCharlas: {
+    foto: "img/eventos/cuyo-tech-week.jpg", alt: "Manuel Leiva dando una charla en Cuyo Tech Week, Mendoza",
+    pie: "Cuyo Tech Week · Mendoza, 2026", posicion: "50% 25%"
+  },
+
   /* ---------- Eventos ----------
      quien: "manuel"  → aparece en Agenda (si es futuro) o en "Dónde estuve" (si pasó y tiene foto)
             "facttic" → aparece solo en la fila "Presencia de FACTTIC"
@@ -145,6 +192,7 @@ window.CONTENIDO = {
     {
       titulo: "General Roca", lugar: "Río Negro", tipo: "Conferencia",
       fecha: "2026-10-28", fechaFin: "2026-10-29", fechaTexto: "28 y 29 de octubre de 2026",
+      ciudad: "General Roca", region: "Río Negro", pais: "AR", /* para el dato estructurado de Google (Event) */
       tema: "IA y cooperativismo tecnológico", quien: "manuel"
     },
     {

@@ -39,9 +39,9 @@
   function renderDestacado() {
     var d = C.destacado; var box = $('#destacado');
     if (!box || !d) return;
-    box.href = d.url || '#charlas';
+    box.href = ruta(d.url || 'charlas/');
     box.innerHTML =
-      '<div class="thumb"><img src="' + attr(d.foto) + '" alt="' + attr(d.alt) + '"><span class="pill c tag">' + d.etiqueta + '</span></div>' +
+      '<div class="thumb"><img src="' + attr(ruta(d.foto)) + '" alt="' + attr(d.alt) + '"><span class="pill c tag">' + d.etiqueta + '</span></div>' +
       '<div class="body"><p class="kick" style="margin-bottom:10px">Destacado</p><h3 class="d">' + d.titulo + '</h3><p class="by">' + d.detalle + '</p></div>';
   }
   function renderProxima() {
@@ -51,7 +51,7 @@
     box.innerHTML = '<span class="pill" style="border-color:#15111A">Próxima charla</span>' +
       '<b>' + e.titulo + (e.lugar ? ', ' + e.lugar : '') + '</b>' +
       '<span style="font-weight:600">' + (e.fechaTexto || '') + '</span>' +
-      '<a href="#charlas">Ver agenda →</a>';
+      '<a href="' + attr(ruta('charlas/')) + '">Ver agenda →</a>';
   }
 
   /* ---------- Agenda, dónde estuve y presencia ---------- */
@@ -64,14 +64,14 @@
     var box = $('#agenda'); if (!box) return;
     if (!agenda.length) { box.innerHTML = '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>'; }
     else box.innerHTML = agenda.map(function (e) {
-      return '<a class="ev" href="' + attr(e.url || '#contacto') + '">' + circuloFecha(e) +
+      return '<a class="ev" href="' + attr(ruta(e.url || '#contacto')) + '">' + circuloFecha(e) +
         '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + '</p></div></a>';
     }).join('');
     /* Ya pasaron: solo se ve en pantallas anchas (ver estilos.css) */
     var past = $('#agenda-pasados'); if (!past) return;
     if (!yaPasaron.length) { var pb = $('#agenda-pasados-box'); if (pb) pb.hidden = true; return; }
     past.innerHTML = yaPasaron.map(function (e) {
-      var tag = e.url ? 'a' : 'div', href = e.url ? ' href="' + attr(e.url) + '"' : '';
+      var tag = e.url ? 'a' : 'div', href = e.url ? ' href="' + attr(ruta(e.url)) + '"' : '';
       return '<' + tag + ' class="ev ev-pasado"' + href + '>' + circuloFecha(e) +
         '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + (e.tema ? '<br>' + e.tema : '') + '</p></div></' + tag + '>';
     }).join('');
@@ -80,7 +80,7 @@
     var box = $('#estuve'); if (!box) return;
     box.innerHTML = pasados.map(function (e) {
       var pos = e.posicion ? ' style="object-position:' + attr(e.posicion) + '"' : '';
-      return '<a class="card" href="' + attr(e.url || '#charlas') + '"><div class="thumb"><img loading="lazy" src="' + attr(e.foto) + '" alt="' + attr(e.alt || e.titulo) + '"' + pos + '>' +
+      return '<a class="card" href="' + attr(e.url ? ruta(e.url) : '#estuve') + '"><div class="thumb"><img loading="lazy" src="' + attr(ruta(e.foto)) + '" alt="' + attr(e.alt || e.titulo) + '"' + pos + '>' +
         '<span class="pill m tag">' + (e.tipo || 'Evento') + '</span></div>' +
         '<div class="body"><h3 class="d">' + e.titulo + '</h3><p class="by">' + [e.lugar, e.fechaTexto].filter(Boolean).join(' · ') + (e.tema ? '<br>' + e.tema : '') + '</p></div></a>';
     }).join('');
@@ -93,7 +93,7 @@
   /* ---------- Lo último ---------- */
   var filtro = 'todo';
   function cardContenido(c) {
-    var href = attr(c.url || '#');
+    var href = attr(ruta(c.url || '#'));
     var ext = /^https?:/.test(c.url || '') ? ' target="_blank" rel="noopener"' : '';
     if (c.tipo === 'placa') {
       var inner = c.cifra
@@ -105,7 +105,7 @@
     }
     var pos = c.posicion ? ' style="object-position:' + attr(c.posicion) + '"' : '';
     var esVideo = c.tipo === 'video';
-    return '<a class="card" href="' + href + '"' + ext + '><div class="thumb' + (esVideo ? '' : ' tint') + '"><img loading="lazy" src="' + attr(c.foto) + '" alt="' + attr(c.alt || '') + '"' + pos + '>' +
+    return '<a class="card" href="' + href + '"' + ext + '><div class="thumb' + (esVideo ? '' : ' tint') + '"><img loading="lazy" src="' + attr(ruta(c.foto)) + '" alt="' + attr(c.alt || '') + '"' + pos + '>' +
       (esVideo ? PLAY : '') + '<span class="pill c tag">' + (c.etiqueta || '') + '</span></div>' +
       '<div class="body"><h3 class="d">' + c.titulo + '</h3><p class="by">' + (c.detalle || '') + (esVideo ? ' · Ver video →' : ' · Leer nota →') + '</p></div></a>';
   }
@@ -197,7 +197,7 @@
     box.className = 'reels'; box.style.gridTemplateColumns = '';
     box.innerHTML = vids.slice(0, 8).map(function (v, i) {
       var o = typeof v === 'string' ? { url: v } : v;
-      var img = o.foto ? '<img loading="lazy" src="' + attr(o.foto) + '" alt="">' : '';
+      var img = o.foto ? '<img loading="lazy" src="' + attr(ruta(o.foto)) + '" alt="">' : '';
       var fondo = o.foto ? '#4A2270' : 'linear-gradient(160deg,#4A2270 0%,#88155D 100%)';
       return '<a class="reel" href="' + attr(o.url) + '" target="_blank" rel="noopener" style="background:' + fondo + '">' + img +
         PLAY.replace('class="play"', 'class="play" style="width:48px;height:48px"') +
@@ -223,6 +223,79 @@
     cargarScript('https://www.tiktok.com/embed.js', 'tt-embed');
   }
 
+  /* ---------- Blog ---------- */
+  var BASE = document.documentElement.getAttribute('data-base') || '';   /* "../" en las páginas dentro de /blog/ */
+  function ruta(p) { return /^(https?:|#|mailto:)/.test(p || '') ? p : BASE + (p || ''); }
+  function entradasBlog() {
+    return (C.blog || []).filter(function (b) { return b && b.titulo && b.url; })
+      .sort(function (a, b) { return String(b.fecha || '').localeCompare(String(a.fecha || '')); });
+  }
+  function cardBlog(b) {
+    var ext = b.tipo === 'externa', pos = b.posicion ? ' style="object-position:' + attr(b.posicion) + '"' : '';
+    var meta = ext ? [b.medio, b.fechaTexto].filter(Boolean).join(' · ') + ' · Leer nota →' : [b.fechaTexto, b.lectura].filter(Boolean).join(' · ') + ' · Leer →';
+    return '<a class="card" href="' + attr(ruta(b.url)) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' +
+      '<div class="thumb">' + (b.foto ? '<img loading="lazy" src="' + attr(ruta(b.foto)) + '" alt="' + attr(b.alt || '') + '"' + pos + '>' : '') +
+      '<span class="pill c tag">' + attr(b.etiqueta || 'Nota') + '</span></div>' +
+      '<div class="body"><h3 class="d">' + attr(b.titulo) + '</h3>' + (b.resumen ? '<p class="blogres">' + attr(b.resumen) + '</p>' : '') +
+      '<p class="by">' + attr(meta) + '</p></div></a>';
+  }
+  var CATEGORIAS = { estudio: 'Estudios', nota: 'Notas en medios', opinion: 'Opinión', exposicion: 'Exposiciones' };
+  function renderBlog() {
+    var box = $('#blog-lista'); if (!box) return;
+    var todas = entradasBlog(), lim = parseInt(box.getAttribute('data-limite'), 10);
+    if (!todas.length) { box.innerHTML = '<p class="vacio">Pronto nuevas notas.</p>'; var f0 = $('#blog-filtros'); if (f0) f0.hidden = true; return; }
+    var actual = 'todo';
+    function pintar() {
+      var items = todas.filter(function (b) { return actual === 'todo' || b.categoria === actual; });
+      if (lim) items = items.slice(0, lim);
+      box.innerHTML = items.map(cardBlog).join('');
+    }
+    var fil = $('#blog-filtros');
+    if (fil) {
+      var cats = []; todas.forEach(function (b) { if (b.categoria && cats.indexOf(b.categoria) < 0) cats.push(b.categoria); });
+      if (cats.length > 1) {
+        fil.innerHTML = '<button class="pill is-active" type="button" data-cat="todo" aria-pressed="true">Todo</button>' +
+          cats.map(function (c) { return '<button class="pill" type="button" data-cat="' + attr(c) + '" aria-pressed="false">' + attr(CATEGORIAS[c] || c) + '</button>'; }).join('');
+        fil.hidden = false;
+        $$('button', fil).forEach(function (b) {
+          b.addEventListener('click', function () {
+            actual = b.getAttribute('data-cat');
+            $$('button', fil).forEach(function (x) { var on = x === b; x.classList.toggle('is-active', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+            pintar();
+          });
+        });
+      } else fil.hidden = true;
+    }
+    pintar();
+  }
+
+  /* Datos estructurados (JSON-LD) que se arman desde contenido.js: próximos eventos y blog */
+  function inyectarJsonLd() {
+    if (!$('#inicio')) return;
+    var g = [], persona = { '@id': 'https://manuleiva.com/#persona' };
+    agenda.forEach(function (e) {
+      if (!e.fecha || !e.ciudad) return;
+      g.push({
+        '@type': 'Event', name: e.titulo + (e.tipo ? ' · ' + e.tipo : ''), description: e.tema || undefined,
+        startDate: e.fecha, endDate: e.fechaFin || e.fecha,
+        eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        location: { '@type': 'Place', name: e.ciudad, address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: e.region || undefined, addressCountry: e.pais || 'AR' } },
+        performer: persona, organizer: persona
+      });
+    });
+    var propias = entradasBlog().filter(function (b) { return b.tipo === 'articulo'; });
+    if (propias.length) g.push({
+      '@type': 'Blog', '@id': 'https://manuleiva.com/blog/#blog', url: 'https://manuleiva.com/blog/', name: 'Blog de Manuel Leiva', inLanguage: 'es-AR', author: persona,
+      blogPost: propias.map(function (b) {
+        return { '@type': 'BlogPosting', headline: b.titulo, url: 'https://manuleiva.com/' + b.url, datePublished: b.fecha, author: persona, description: b.resumen || undefined, image: b.foto ? 'https://manuleiva.com/' + b.foto : undefined };
+      })
+    });
+    if (!g.length) return;
+    var s = document.createElement('script'); s.type = 'application/ld+json';
+    s.text = JSON.stringify({ '@context': 'https://schema.org', '@graph': g });
+    document.head.appendChild(s);
+  }
+
   /* ---------- Sección Redjar ---------- */
   function renderRedjar() {
     var R = C.redjar, sec = $('#redjar');
@@ -235,7 +308,7 @@
     var a = $('#rj-sitio'); if (a) { if (R.sitio) { a.href = R.sitio; a.textContent = R.sitioTexto || R.sitio; } else a.hidden = true; }
     [['#rj-foto', R.foto, R.alt, R.posicion], ['#rj-foto2', R.foto2, R.alt2, R.posicion2]].forEach(function (f) {
       var im = $(f[0]); if (!im) return;
-      if (f[1]) { im.src = f[1]; im.alt = f[2] || ''; if (f[3]) im.style.objectPosition = f[3]; } else im.hidden = true;
+      if (f[1]) { im.src = ruta(f[1]); im.alt = f[2] || ''; if (f[3]) im.style.objectPosition = f[3]; } else im.hidden = true;
     });
     var pp = $('#rj-parrafos');
     if (pp) pp.innerHTML = (R.parrafos || []).map(function (t) { return '<p class="rjp">' + attr(t) + '</p>'; }).join('');
@@ -251,7 +324,7 @@
     var red = $('#rj-alianzas');
     if (red) red.innerHTML = (R.alianzas || []).map(function (x) {
       var o = typeof x === 'string' ? { nombre: x } : x;
-      var inner = o.logo ? '<img loading="lazy" src="' + attr(o.logo) + '" alt="' + attr(o.nombre) + '">' : '<span class="pill">' + attr(o.nombre) + '</span>';
+      var inner = o.logo ? '<img loading="lazy" src="' + attr(ruta(o.logo)) + '" alt="' + attr(o.nombre) + '">' : '<span class="pill">' + attr(o.nombre) + '</span>';
       var cls = o.logo ? 'rjlogo' : 'rjnom';
       return o.url ? '<a class="' + cls + '" href="' + attr(o.url) + '" target="_blank" rel="noopener" title="' + attr(o.nombre) + '">' + inner + '</a>'
                    : '<span class="' + cls + '" title="' + attr(o.nombre) + '">' + inner + '</span>';
@@ -292,7 +365,41 @@
         if (r.top < 70 || r.bottom > window.innerHeight) player.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       });
     });
-    mostrar(0, false);
+    var pedido = 0;   /* /videos/?v=ID abre ese video */
+    try { var q = new URLSearchParams(location.search).get('v'); if (q) vids.forEach(function (v, i) { if (v.id === q) pedido = i; }); } catch (e) { /* sin soporte */ }
+    mostrar(pedido, false);
+  }
+
+  /* Adelanto de videos en la landing: los 3 primeros, con link a /videos/ */
+  function renderVideosHome() {
+    var sec = $('#adelanto-videos'), box = $('#videos-home'); if (!sec || !box) return;
+    var vids = (C.videos || []).filter(function (v) { return v && v.id; }).slice(0, 3);
+    if (!vids.length) return;
+    box.innerHTML = vids.map(function (v) {
+      return '<a class="card" href="' + attr(ruta('videos/?v=' + encodeURIComponent(v.id))) + '"><div class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg" alt="">' + PLAY + '</div>' +
+        '<div class="body"><h3 class="d">' + attr(v.titulo) + '</h3><p class="by">' + attr(v.medio || '') + '</p></div></a>';
+    }).join('');
+    sec.hidden = false;
+  }
+
+  /* Adelanto de charlas en la landing: próximas (hasta 3) y últimas (hasta 3) */
+  function renderCharlasHome() {
+    var prox = $('#agenda-home'), ult = $('#ultimas-home'); if (!prox && !ult) return;
+    var fc = C.fotoCharlas, fig = $('#adel-foto');
+    if (fig && fc && fc.foto) {
+      var im = $('#adel-foto-img'); im.src = ruta(fc.foto); im.alt = fc.alt || ''; im.loading = 'lazy'; if (fc.posicion) im.style.objectPosition = fc.posicion;
+      var pie = $('#adel-foto-pie'); if (pie) { pie.textContent = fc.pie || ''; pie.hidden = !fc.pie; }
+      fig.hidden = false;
+    }
+    function fila(e, pasado) {
+      var tag = e.url ? 'a' : 'div', href = e.url ? ' href="' + attr(ruta(e.url)) + '"' : (pasado ? '' : ' href="#contacto"');
+      if (!e.url && !pasado) tag = 'a';
+      return '<' + tag + ' class="ev' + (pasado ? ' ev-pasado' : '') + '"' + href + '>' + circuloFecha(e) +
+        '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + '</p></div></' + tag + '>';
+    }
+    if (prox) prox.innerHTML = agenda.length ? agenda.slice(0, 3).map(function (e) { return fila(e, false); }).join('')
+      : '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>';
+    if (ult) ult.innerHTML = yaPasaron.slice(0, 3).map(function (e) { return fila(e, true); }).join('');
   }
 
   /* ---------- Menú mobile ---------- */
@@ -404,7 +511,7 @@
 
   function init() {
     renderDestacado(); renderProxima(); renderAgenda(); renderPasados(); renderPresencia();
-    renderFeed(); initFiltros(); renderVideos(); renderRedjar(); renderInstagram(); renderTiktok();
+    renderFeed(); initFiltros(); renderVideos(); renderVideosHome(); renderCharlasHome(); renderBlog(); renderRedjar(); renderInstagram(); renderTiktok(); inyectarJsonLd();
     initMenu(); initNewsletter(); initReveal();
     var y = $('#anio'); if (y) y.textContent = new Date().getFullYear();
   }
