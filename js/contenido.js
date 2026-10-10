@@ -271,7 +271,7 @@ window.CONTENIDO = {
     {
       tipo: "video", etiqueta: "Video",
       foto: "img/plenario-facttic.jpg", alt: "Plenario de FACTTIC en Rosario",
-      titulo: "Plenario FACTTIC en Rosario", detalle: "Diciembre de 2023", url: "https://www.instagram.com/facttic.ar/"
+      titulo: "Plenario FACTTIC en Rosario", detalle: "Diciembre de 2023", url: "https://www.instagram.com/p/C1AVvBFOdQw/"
     },
     {
       tipo: "nota", etiqueta: "Nota · Economía social",

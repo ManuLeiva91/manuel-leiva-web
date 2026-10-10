@@ -110,4 +110,5 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 - Dominio manuleiva.com con HTTPS, mail `hola@manuleiva.com` (reenvío con ImprovMX) y dominio autenticado en EnvíaloSimple (SPF, DKIM, DMARC).
 - Datos confirmados: +400.000 puestos de trabajo (Foro Valor Argentino), FACTTIC fundada el 20/07/2012 y exposición de Santa Fe del 26/06/2025.
 - **V1 publicada** (10/10/2026): sitio en páginas (inicio, charlas, videos, blog, sobre mí), SEO y blog con 4 entradas.
-- Decidido: sin video del plenario de FACTTIC; las fotos de las entradas externas del blog se reemplazan cuando haya fotos nuevas.
+- Video del plenario de FACTTIC (diciembre de 2023): enlazado al post de Instagram `instagram.com/p/C1AVvBFOdQw/`.
+- Decidido: las fotos de las entradas externas del blog se reemplazan cuando haya fotos nuevas.
