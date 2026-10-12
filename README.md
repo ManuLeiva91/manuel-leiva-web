@@ -98,16 +98,15 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 
 ## Tareas futuras
 
-- [ ] **Google Search Console y Bing Webmaster Tools:** verificar `manuleiva.com` (propiedad de dominio, con un registro TXT en Donweb) y enviar `https://manuleiva.com/sitemap.xml`. Pedir que FACTTIC, Redjar, Cooperar y los perfiles sociales enlacen al sitio.
-- [ ] **V2:** cargar los otros 3 registros A de GitHub Pages en Donweb (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno. Es opcional, da redundancia.
+- [ ] Revisar en Search Console (hacia mediados de octubre de 2026) que el sitemap pase de "No se ha podido obtener" a "Correcto". Pedir que FACTTIC, Redjar, Cooperar y los perfiles sociales enlacen al sitio.
 - [ ] Decidir si los temas de "De qué hablo" filtran "Lo último" (hoy los cuatro llevan a la misma sección).
-- [ ] Mejorar el área táctil en mobile de los links del footer y del logo del menú.
 
 ## Hecho
 
 - Dominio manuleiva.com con HTTPS, mail `hola@manuleiva.com` (reenvío con ImprovMX) y dominio autenticado en EnvíaloSimple (SPF, DKIM, DMARC).
 - Datos confirmados: +400.000 puestos de trabajo (Foro Valor Argentino), FACTTIC fundada el 20/07/2012 y exposición de Santa Fe del 26/06/2025.
 - **V1 publicada** (10/10/2026): sitio en páginas (inicio, charlas, videos, blog, sobre mí), SEO y blog con 4 entradas.
+- (12/10/2026) Dominio verificado en Google Search Console (propiedad de dominio, TXT en Donweb), sitemap enviado e importado en Bing Webmaster; 4 registros A de GitHub Pages cargados en Donweb; área táctil mobile mejorada en el logo del menú y los links del pie.
 - Video del plenario de FACTTIC (diciembre de 2023): enlazado al post de Instagram `instagram.com/p/C1AVvBFOdQw/`.
 - Decidido: las fotos de las entradas externas del blog se reemplazan cuando haya fotos nuevas.
 - Decidido: no se completan las descripciones de los 8 videos que tienen una sola línea.

@@ -51,7 +51,7 @@ button.pill.is-active{background:#E8452C;border-color:#E8452C;color:#15111A}
 /* nav */
 .nav{position:sticky;top:0;z-index:20;background:#F6EEE8;border-bottom:1px solid rgba(53,18,79,.12)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-.brand{font-size:26px;color:#35124F;text-decoration:none}
+.brand{font-size:26px;color:#35124F;text-decoration:none;min-height:48px;padding-right:8px}
 .links{display:none;flex-direction:column;padding:4px 0 20px}
 .links.open{display:flex}
 .links a{color:#15111A;text-decoration:none;font-weight:600;font-size:16px;padding:12px 0}
@@ -143,8 +143,8 @@ button.pill.is-active{background:#E8452C;border-color:#E8452C;color:#15111A}
 .field input:focus{outline:none;border-color:#E8452C}
 .footer{background:#1E0716;color:#F6EEE8;padding:48px 0 56px}
 .frow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-.flinks{display:flex;flex-wrap:wrap;gap:18px}
-.flinks a{color:#F6EEE8;font-weight:600;font-size:14px;text-decoration:none}
+.flinks{display:flex;flex-wrap:wrap;gap:4px 10px}
+.flinks a{color:#F6EEE8;font-weight:600;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 8px}
 .flinks a:hover{color:#E8452C}
 /* movimiento */
 .js-anim [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
