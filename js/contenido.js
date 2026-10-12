@@ -216,7 +216,7 @@ window.CONTENIDO = {
     },
     {
       titulo: "Las cooperativas construyen un mundo mejor", lugar: "Santa Fe", tipo: "Panel",
-      fecha: null, fechaTexto: "Congreso Internacional · 2025",
+      fecha: "2025-06-26", fechaTexto: "26 de junio de 2025",
       foto: "img/eventos/mundo-mejor.jpg", alt: "Panel del congreso Las Cooperativas Construyen un Mundo Mejor",
       quien: "manuel", proximo: false
     },

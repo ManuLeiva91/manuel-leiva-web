@@ -100,9 +100,7 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 
 - [ ] **Google Search Console y Bing Webmaster Tools:** verificar `manuleiva.com` (propiedad de dominio, con un registro TXT en Donweb) y enviar `https://manuleiva.com/sitemap.xml`. Pedir que FACTTIC, Redjar, Cooperar y los perfiles sociales enlacen al sitio.
 - [ ] **V2:** cargar los otros 3 registros A de GitHub Pages en Donweb (`185.199.109.153`, `.110.153`, `.111.153`); hoy hay solo uno. Es opcional, da redundancia.
-- [ ] **Descripciones de los videos:** 8 de los 9 tienen solo una línea con datos del medio. Completar con lo que Manuel dice en cada uno.
 - [ ] Decidir si los temas de "De qué hablo" filtran "Lo último" (hoy los cuatro llevan a la misma sección).
-- [ ] Fecha de la entrevista de La Capital Más ("In Situ") y de "Las cooperativas construyen un mundo mejor".
 - [ ] Mejorar el área táctil en mobile de los links del footer y del logo del menú.
 
 ## Hecho
@@ -112,3 +110,5 @@ Es un sitio estático. Está publicado con **GitHub Pages** en https://manuleiva
 - **V1 publicada** (10/10/2026): sitio en páginas (inicio, charlas, videos, blog, sobre mí), SEO y blog con 4 entradas.
 - Video del plenario de FACTTIC (diciembre de 2023): enlazado al post de Instagram `instagram.com/p/C1AVvBFOdQw/`.
 - Decidido: las fotos de las entradas externas del blog se reemplazan cuando haya fotos nuevas.
+- Decidido: no se completan las descripciones de los 8 videos que tienen una sola línea.
+- "Las cooperativas construyen un mundo mejor": 26 de junio de 2025.
