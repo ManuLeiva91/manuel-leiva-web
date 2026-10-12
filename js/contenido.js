@@ -100,6 +100,14 @@ window.CONTENIDO = {
     },
     {
       tipo: "externa", categoria: "nota", etiqueta: "Entrevista",
+      titulo: "El cooperativismo puede reconstruir la economía argentina",
+      resumen: "Entrevista en COLSECOR Noticias: el cooperativismo como herramienta de respuesta rápida, el reclamo de condiciones iguales para las cooperativas de trabajo y la necesidad de una inteligencia artificial propia.",
+      medio: "COLSECOR Noticias", fecha: "2025-09-17", fechaTexto: "17 de septiembre de 2025",
+      foto: "img/colsecor-entrevista.jpg", alt: "Manuel Leiva sonriendo con la publicación de Redjar en las manos", posicion: "50% 30%",
+      url: "https://www.colsecornoticias.com.ar/entrevistas/wwwcolsecorcomarcooperativismo-tecnologico-manuel-leiva-economia-argentina-n13814"
+    },
+    {
+      tipo: "externa", categoria: "nota", etiqueta: "Entrevista",
       titulo: "Donde hay una necesidad, nace una cooperativa",
       resumen: "Entrevista antes del Día Internacional de las Cooperativas: por qué es clave dar visibilidad al aporte del sector y que los gobiernos diseñen políticas específicas para un actor productivo en crecimiento.",
       medio: "Redacción Rosario", fecha: "2025-07-07", fechaTexto: "7 de julio de 2025",
@@ -215,6 +223,36 @@ window.CONTENIDO = {
       quien: "manuel", proximo: false
     },
     {
+      titulo: "Expoagro 2026", lugar: "San Nicolás", tipo: "Feria",
+      fecha: "2026-03-10", fechaTexto: "10 de marzo de 2026",
+      foto: "img/eventos/expoagro-2026.jpg", alt: "Manuel Leiva hablando con micrófono sobre un escenario bajo una carpa blanca, en Expoagro", posicion: "50% 55%",
+      quien: "manuel", proximo: false
+    },
+    {
+      titulo: "4º Encuentro de Juventudes Cooperativistas", lugar: "Venado Tuerto, Santa Fe", tipo: "Encuentro",
+      fecha: "2026-09-04", fechaTexto: "4 de septiembre de 2026", tema: "Con 700 estudiantes secundarios",
+      foto: "img/eventos/jovenes-venado-2026.jpg", alt: "Manuel Leiva con docentes y referentes frente a cientos de estudiantes en el 4º Encuentro de Juventudes Cooperativistas", posicion: "50% 40%",
+      quien: "manuel", proximo: false
+    },
+    {
+      titulo: "Encuentro de Jóvenes Cooperativistas 2025", lugar: "Venado Tuerto, Santa Fe", tipo: "Encuentro",
+      fecha: "2025-11-20", fechaTexto: "20 de noviembre de 2025",
+      foto: "img/eventos/jovenes-venado-2025.jpg", alt: "Manuel Leiva con estudiantes de remera roja en el Encuentro de Jóvenes Cooperativistas, en Venado Tuerto", posicion: "50% 40%",
+      quien: "manuel", proximo: false
+    },
+    {
+      titulo: "Seminario Nacional de Juventudes 2025", lugar: "Merlo, San Luis", tipo: "Seminario", tema: "ACA Jóvenes",
+      fecha: "2025-10-09", fechaFin: "2025-10-11", fechaTexto: "9, 10 y 11 de octubre de 2025",
+      foto: "img/eventos/aca-seminario-panel.jpg", alt: "Manuel Leiva en un panel con tres personas en el Seminario Nacional de Juventudes de ACA Jóvenes", posicion: "40% 50%",
+      quien: "manuel", proximo: false
+    },
+    {
+      titulo: "Congreso Internacional de Cooperativas y Mutuales", lugar: "Córdoba", tipo: "Congreso",
+      fecha: "2025-08-11", fechaFin: "2025-08-12", fechaTexto: "11 y 12 de agosto de 2025",
+      foto: "img/eventos/cicm-cordoba-2025.jpg", alt: "Manuel Leiva en una pantalla gigante durante el Congreso Internacional de Cooperativas y Mutuales, en Córdoba", posicion: "30% 50%",
+      quien: "manuel", proximo: false
+    },
+    {
       titulo: "Las cooperativas construyen un mundo mejor", lugar: "Santa Fe", tipo: "Panel",
       fecha: "2025-06-26", fechaTexto: "26 de junio de 2025",
       foto: "img/eventos/mundo-mejor.jpg", alt: "Panel del congreso Las Cooperativas Construyen un Mundo Mejor",
@@ -236,7 +274,7 @@ window.CONTENIDO = {
       titulo: "ICA Global Cooperative Conference", lugar: "Nueva Delhi, India", tipo: "Panel",
       fecha: "2024-11-25", fechaFin: "2024-11-30", fechaTexto: "noviembre 2024",
       tema: "Digital and New Technologies",
-      foto: "img/eventos/ica-panel.jpg", alt: "Manuel Leiva en el panel Digital and New Technologies de la ICA", posicion: "30% 70%",
+      foto: "img/eventos/ica-panel.jpg", alt: "Manuel Leiva en el panel Digital and New Technologies de la ICA", posicion: "50% 43%",
       quien: "ambos", presencia: "ACI · Conferencia mundial 2024, Nueva Delhi"
     },
     { titulo: "AgroTIC", quien: "facttic", fecha: null, presencia: "AgroTIC" },
