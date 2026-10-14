@@ -198,6 +198,12 @@ window.CONTENIDO = {
       quien: "manuel"
     },
     {
+      titulo: "Rosario Tech Week", lugar: "Rosario", tipo: "Exposición",
+      fecha: "2026-10-22", fechaTexto: "22 de octubre de 2026",
+      ciudad: "Rosario", region: "Santa Fe", pais: "AR", /* para el dato estructurado de Google (Event) */
+      tema: "Open Office cooperativo y exposición sobre tecnología cooperativa", quien: "manuel"
+    },
+    {
       titulo: "General Roca", lugar: "Río Negro", tipo: "Conferencia",
       fecha: "2026-10-28", fechaFin: "2026-10-29", fechaTexto: "28 y 29 de octubre de 2026",
       ciudad: "General Roca", region: "Río Negro", pais: "AR", /* para el dato estructurado de Google (Event) */

@@ -62,7 +62,7 @@
   }
   function renderAgenda() {
     var box = $('#agenda'); if (!box) return;
-    if (!agenda.length) { box.innerHTML = '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>'; }
+    if (!agenda.length) { box.innerHTML = '<p class="vacio">Pronto nuevas fechas. ¿Tenés un evento en mente? <a href="#contacto">Escribime</a>.</p>'; }
     else box.innerHTML = agenda.map(function (e) {
       return '<a class="ev" href="' + attr(ruta(e.url || '#contacto')) + '">' + circuloFecha(e) +
         '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + '</p></div></a>';
@@ -398,7 +398,7 @@
         '<div><h3 class="d">' + e.titulo + '</h3><p>' + [e.lugar, e.tipo, e.fechaTexto].filter(Boolean).join(' · ') + '</p></div></' + tag + '>';
     }
     if (prox) prox.innerHTML = agenda.length ? agenda.slice(0, 3).map(function (e) { return fila(e, false); }).join('')
-      : '<p class="vacio">Pronto nuevas fechas. ¿Querés que vaya a tu evento? <a href="#contacto">Escribime</a>.</p>';
+      : '<p class="vacio">Pronto nuevas fechas. ¿Tenés un evento en mente? <a href="#contacto">Escribime</a>.</p>';
     if (ult) ult.innerHTML = yaPasaron.slice(0, 3).map(function (e) { return fila(e, true); }).join('');
   }
 
