@@ -201,6 +201,7 @@ window.CONTENIDO = {
       titulo: "Rosario Tech Week", lugar: "Rosario", tipo: "Exposición",
       fecha: "2026-10-22", fechaTexto: "22 de octubre de 2026",
       ciudad: "Rosario", region: "Santa Fe", pais: "AR", /* para el dato estructurado de Google (Event) */
+      /* opcional: entradas: "https://link-de-inscripcion", precio: 0 (gratis) o el valor, moneda: "ARS" */
       tema: "Open Office cooperativo y exposición sobre tecnología cooperativa", quien: "manuel"
     },
     {

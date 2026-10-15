@@ -280,6 +280,8 @@
         startDate: e.fecha, endDate: e.fechaFin || e.fecha,
         eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         location: { '@type': 'Place', name: e.ciudad, address: { '@type': 'PostalAddress', addressLocality: e.ciudad, addressRegion: e.region || undefined, addressCountry: e.pais || 'AR' } },
+        image: 'https://manuleiva.com/' + (e.foto || 'img/og/manuel-leiva-og.jpg'), url: 'https://manuleiva.com/charlas/',
+        offers: e.entradas ? { '@type': 'Offer', url: e.entradas, price: e.precio || 0, priceCurrency: e.moneda || 'ARS', availability: 'https://schema.org/InStock' } : undefined,
         performer: persona, organizer: persona
       });
     });
