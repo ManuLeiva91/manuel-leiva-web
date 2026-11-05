@@ -179,8 +179,8 @@ window.CONTENIDO = {
 
   /* Foto que acompaña el adelanto de "Dónde hablo" en la portada (si se borra, la sección queda sin foto) */
   fotoCharlas: {
-    foto: "img/eventos/cuyo-tech-week.jpg", alt: "Manuel Leiva dando una charla en Cuyo Tech Week, Mendoza",
-    pie: "Cuyo Tech Week · Mendoza, 2026", posicion: "50% 25%"
+    foto: "img/eventos/rio-negro-selfie.jpg", alt: "Selfie de Manuel Leiva con micrófono, con más de cien estudiantes y docentes detrás, en Villa Regina, Río Negro",
+    pie: "Villa Regina · Río Negro, 2026", posicion: "50% 70%"
   },
 
   /* ---------- Eventos ----------
@@ -206,10 +206,41 @@ window.CONTENIDO = {
       quien: "manuel", proximo: false
     },
     {
-      titulo: "General Roca", lugar: "Río Negro", tipo: "Conferencia",
+      titulo: "Visita y exposición en el Cluster Tecnológico", lugar: "Formosa", tipo: "Exposición",
+      fecha: "2026-11-21", fechaTexto: "21 de noviembre de 2026",
+      ciudad: "Formosa", region: "Formosa", pais: "AR",
+      quien: "manuel"
+    },
+    {
+      titulo: "Cierre del Coopathon Universitario", lugar: "Sunchales, Santa Fe", tipo: "Hackatón",
+      fecha: "2026-11-12", fechaTexto: "12 de noviembre de 2026",
+      ciudad: "Sunchales", region: "Santa Fe", pais: "AR",
+      quien: "manuel"
+    },
+    {
+      titulo: "Semana Global del Emprendimiento", lugar: "Mendoza", tipo: "Conferencia",
+      fecha: "2026-11-26", fechaTexto: "26 de noviembre de 2026",
+      ciudad: "Mendoza", region: "Mendoza", pais: "AR",
+      quien: "manuel"
+    },
+    {
+      titulo: "Foro de la Comunidad Informática", lugar: "Capital Federal", tipo: "Foro",
+      fecha: "2026-11-28", fechaTexto: "28 de noviembre de 2026",
+      ciudad: "Buenos Aires", region: "Ciudad Autónoma de Buenos Aires", pais: "AR",
+      quien: "manuel"
+    },
+    {
+      titulo: "El Salvador", lugar: "El Salvador", tipo: "Conferencia",
+      fecha: "2026-12-07", fechaFin: "2026-12-08", fechaTexto: "7 y 8 de diciembre de 2026",
+      quien: "manuel" /* sin ciudad: no genera dato estructurado de Google hasta que se cargue */
+    },
+    {
+      titulo: "4ª Jornada de Cooperativismo y Mutualismo Escolar", lugar: "Villa Regina, Río Negro", tipo: "Jornada",
       fecha: "2026-10-28", fechaFin: "2026-10-29", fechaTexto: "28 y 29 de octubre de 2026",
-      ciudad: "General Roca", region: "Río Negro", pais: "AR", /* para el dato estructurado de Google (Event) */
-      tema: "IA y cooperativismo tecnológico", quien: "manuel"
+      tema: "Cooperativismo, tecnología e IA con más de 100 estudiantes · visitas a la UNRN y la UNCo",
+      foto: "img/eventos/rio-negro-selfie.jpg", alt: "Selfie de Manuel Leiva con micrófono, con más de cien estudiantes y docentes detrás, en Villa Regina, Río Negro", posicion: "50% 30%",
+      url: "https://www.instagram.com/p/DfLRztvm1fo/",
+      quien: "manuel", proximo: false
     },
     {
       titulo: "Cuyo Tech Week", lugar: "Mendoza", tipo: "Conferencia",
