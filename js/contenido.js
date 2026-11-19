@@ -60,10 +60,11 @@ window.CONTENIDO = {
      { url: "https://www.tiktok.com/@manuleiva91/video/ID", foto: "img/tiktok/ID.jpg", titulo: "Texto corto" }
      Si la lista está vacía se muestra una tarjeta que lleva al perfil (o el embed oficial si mostrarPerfilTiktok es true). */
   tiktokVideos: [
-    "https://www.tiktok.com/@manuleiva91/video/7689537806137429256",
-    "https://www.tiktok.com/@manuleiva91/video/7689537489941351698",
-    "https://www.tiktok.com/@manuleiva91/video/7689536131280440628",
-    "https://www.tiktok.com/@manuleiva91/video/7631280980610911509",
+    /* La foto solo se usa en celulares (tarjetas); en computadora se ve el reproductor de TikTok */
+    { url: "https://www.tiktok.com/@manuleiva91/video/7689537806137429256", foto: "img/tiktok/7689537806137429256.jpg" },
+    { url: "https://www.tiktok.com/@manuleiva91/video/7689537489941351698", foto: "img/tiktok/7689537489941351698.jpg" },
+    { url: "https://www.tiktok.com/@manuleiva91/video/7689536131280440628", foto: "img/tiktok/7689536131280440628.jpg" },
+    { url: "https://www.tiktok.com/@manuleiva91/video/7631280980610911509", foto: "img/tiktok/7631280980610911509.jpg" },
     "https://www.tiktok.com/@manuleiva91/video/7462116471871737093"
   ],
   mostrarPerfilTiktok: false, /* true = embed oficial del perfil (fondo blanco, no se puede estilizar) */
@@ -206,9 +207,11 @@ window.CONTENIDO = {
       quien: "manuel", proximo: false
     },
     {
-      titulo: "Visita y exposición en el Cluster Tecnológico", lugar: "Formosa", tipo: "Exposición",
+      titulo: "Foro Futuros · V Juegos Provinciales Tecnológicos", lugar: "Formosa", tipo: "Charla",
       fecha: "2026-11-21", fechaTexto: "21 de noviembre de 2026",
       ciudad: "Formosa", region: "Formosa", pais: "AR",
+      tema: "«El futuro también se construye con IA» · Polo Científico, Tecnológico y de Innovación",
+      url: "https://www.eldestapeweb.com/informacion-general/robotica-inteligencia-artificial-drones-formosa-prepara-nueva-edicion-juegos-tecnologicos-provinciales-202611199301",
       quien: "manuel"
     },
     {

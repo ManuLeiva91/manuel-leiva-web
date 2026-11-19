@@ -209,7 +209,9 @@
     var user = C.redes && C.redes.tiktok;
     var vids = (C.tiktokVideos || []).filter(Boolean);
     if (vids.length) {
-      if (C.tiktokModo === 'tarjetas') renderTiktokNativo(box, vids); else renderTiktokPlayers(box, vids);
+      /* En celulares el reproductor de TikTok se queda en negro (su control anti-bots no pasa): ahí van tarjetas */
+      var tactil = window.matchMedia && matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+      if (C.tiktokModo === 'tarjetas' || tactil) renderTiktokNativo(box, vids); else renderTiktokPlayers(box, vids);
       return;
     } else if (!C.mostrarPerfilTiktok && user) {
       box.className = 'follow'; box.style.gridTemplateColumns = '1fr'; box.style.marginTop = '0';
