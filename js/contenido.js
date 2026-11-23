@@ -215,6 +215,14 @@ window.CONTENIDO = {
       quien: "manuel"
     },
     {
+      titulo: "Cómo la IA puede potenciar la Cooperativa y Mutual Escolar", lugar: "Sunchales, Santa Fe", tipo: "Charla",
+      fecha: "2026-11-24", fechaTexto: "24 de noviembre de 2026",
+      ciudad: "Sunchales", region: "Santa Fe", pais: "AR",
+      tema: "Casa Cooperativa de Sunchales · Para directivos y docentes · Fundación Grupo Sancor Seguros",
+      url: "https://www.instagram.com/fundacion.grupo.sancor.seguros/p/Df9oci6Jis-/",
+      quien: "manuel"
+    },
+    {
       titulo: "Cierre del Coopathon Universitario", lugar: "Sunchales, Santa Fe", tipo: "Hackatón",
       fecha: "2026-11-12", fechaTexto: "12 de noviembre de 2026",
       ciudad: "Sunchales", region: "Santa Fe", pais: "AR",
