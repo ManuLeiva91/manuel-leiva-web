@@ -38,6 +38,8 @@ window.CONTENIDO = {
   videos: [
     { id: "LvAcQPlVugo", titulo: "“Los MEJORES programadores son ARGENTINOS”: Leiva y las cooperativas tecnológicas", medio: "La Capital Más · In Situ",
       descripcion: "Las cooperativas pueden ayudar a que la Argentina sea una potencia tecnológica si se prioriza la soberanía tecnológica y el desarrollo local. Pueden competir con empresas extranjeras en eficiencia y rapidez; el principal obstáculo, plantea Manuel, es la falta de planificación nacional y de decisión política." },
+    { id: "0E_oqoJ6Ey8", inicio: 6331, titulo: "El Día Está Después: Manuel Leiva", medio: "Radio UNR 103.3",
+      descripcion: "Entrevista a Manuel Leiva en «El Día Está Después», el programa de Radio UNR, del 19 de noviembre de 2026. El video arranca en el minuto 1:45:31." },
     { id: "smOKQfChGpA", titulo: "Manuel Leiva, presidente de FACTTIC", medio: "COLSECOR",
       descripcion: "Manuel Leiva, presentado como presidente de FACTTIC, la federación argentina de cooperativas de trabajo de tecnología, innovación y conocimiento." },
     { id: "XU4L8z04wy8", titulo: "Argentina puede ser potencia en tecnología", medio: "RosarioPlus 98.9 · Con Códigos",
