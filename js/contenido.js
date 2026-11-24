@@ -94,6 +94,14 @@ window.CONTENIDO = {
      fecha: "AAAA-MM-DD" o "AAAA-MM" (para ordenar y para buscadores). fechaTexto: cómo se muestra. */
   blog: [
     {
+      tipo: "externa", categoria: "nota", etiqueta: "Entrevista",
+      titulo: "«Cooperar es mejor que competir», la premisa de Manuel Leiva para construir soberanía desde el cooperativismo",
+      resumen: "Entrevista en Revista Vértices: soberanía tecnológica, una inteligencia artificial argentina, el valor que queda en el territorio y el balance de tres años al frente de FACTTIC.",
+      medio: "Revista Vértices", fecha: "2026-11-21", fechaTexto: "21 de noviembre de 2026",
+      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 25%",
+      url: "https://www.vertices.com.ar/d/contenidos/cooperar-es-mejor-que-competir-la-premisa-de-manuel-leiva-para-construir-soberania-de-1532/"
+    },
+    {
       tipo: "externa", categoria: "opinion", etiqueta: "Opinión",
       titulo: "El cooperativismo, un aliado que la acción climática no puede ignorar",
       resumen: "La ONU reconoció al modelo cooperativo como socio clave de la Agenda 2030. Cómo aporta el cooperativismo a la acción climática, con los ejemplos de TAU y Programa Espuma, en Rosario.",
@@ -337,6 +345,11 @@ window.CONTENIDO = {
   /* ---------- Lo último: notas, videos y placas ----------
      tipo: "nota" | "video" | "placa". Las placas no llevan foto: llevan colores y titular. */
   contenidos: [
+    {
+      tipo: "nota", etiqueta: "Entrevista · Soberanía tecnológica",
+      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 25%",
+      titulo: "«Cooperar es mejor que competir»", detalle: "Revista Vértices · 21 de noviembre de 2026", url: "https://www.vertices.com.ar/d/contenidos/cooperar-es-mejor-que-competir-la-premisa-de-manuel-leiva-para-construir-soberania-de-1532/"
+    },
     {
       tipo: "nota", etiqueta: "Nota · IA y trabajo",
       foto: "img/eventos/congreso-panel.jpg", alt: "Panel del Congreso Internacional de Cooperativas y Mutuales",
