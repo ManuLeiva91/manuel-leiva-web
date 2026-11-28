@@ -40,6 +40,10 @@ window.CONTENIDO = {
       descripcion: "Las cooperativas pueden ayudar a que la Argentina sea una potencia tecnológica si se prioriza la soberanía tecnológica y el desarrollo local. Pueden competir con empresas extranjeras en eficiencia y rapidez; el principal obstáculo, plantea Manuel, es la falta de planificación nacional y de decisión política." },
     { id: "0E_oqoJ6Ey8", inicio: 6331, titulo: "El Día Está Después: Manuel Leiva", medio: "Radio UNR 103.3",
       descripcion: "Entrevista a Manuel Leiva en «El Día Está Después», el programa de Radio UNR, del 19 de noviembre de 2026. El video arranca en el minuto 1:45:31." },
+    { id: "MYQBeq79xXs", titulo: "Premiación y cierre del Coopathon Universitario", medio: "Fundación Grupo Sancor Seguros",
+      descripcion: "Streaming de cierre del Coopathon Universitario, la convocatoria nacional que conecta a estudiantes universitarios con desafíos reales de cooperativas y mutuales argentinas. 12 de noviembre de 2026." },
+    { id: "OAIZ7xSTdqw", titulo: "Premiación y cierre del Coopathon Educativo", medio: "Fundación Grupo Sancor Seguros",
+      descripcion: "Streaming de premiación y cierre del Coopathon Educativo, el concurso de innovación abierta para cooperativas y mutuales escolares de primaria y secundaria de todo el país, impulsado por la Fundación Grupo Sancor Seguros, INAES y CALCME. 23 de septiembre de 2026." },
     { id: "smOKQfChGpA", titulo: "Manuel Leiva, presidente de FACTTIC", medio: "COLSECOR",
       descripcion: "Manuel Leiva, presentado como presidente de FACTTIC, la federación argentina de cooperativas de trabajo de tecnología, innovación y conocimiento." },
     { id: "XU4L8z04wy8", titulo: "Argentina puede ser potencia en tecnología", medio: "RosarioPlus 98.9 · Con Códigos",
@@ -238,6 +242,17 @@ window.CONTENIDO = {
       titulo: "Cierre del Coopathon Universitario", lugar: "Sunchales, Santa Fe", tipo: "Hackatón",
       fecha: "2026-11-12", fechaTexto: "12 de noviembre de 2026",
       ciudad: "Sunchales", region: "Santa Fe", pais: "AR",
+      tema: "Streaming de premiación y cierre · Estudiantes universitarios con desafíos reales de cooperativas y mutuales · Fundación Grupo Sancor Seguros",
+      foto: "img/eventos/coopathon-universitario.jpg", alt: "Manuel Leiva con auriculares y el pulgar arriba junto a la conductora y los organizadores en el streaming de cierre del Coopathon Universitario", posicion: "50% 40%",
+      url: "https://www.youtube.com/watch?v=MYQBeq79xXs",
+      quien: "manuel"
+    },
+    {
+      titulo: "Cierre del Coopathon Educativo", lugar: "Streaming nacional", tipo: "Hackatón",
+      fecha: "2026-09-23", fechaTexto: "23 de septiembre de 2026",
+      tema: "Premiación de cooperativas y mutuales escolares de todo el país · 50 proyectos de primaria y secundaria en 5 regiones · Fundación Grupo Sancor Seguros, INAES y CALCME",
+      foto: "img/eventos/coopathon-educativo.jpg", alt: "Manuel Leiva habla al micrófono en el streaming de cierre del Coopathon Educativo, rodeado de organizadores y docentes", posicion: "50% 35%",
+      url: "https://www.youtube.com/watch?v=OAIZ7xSTdqw",
       quien: "manuel"
     },
     {
