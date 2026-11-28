@@ -98,7 +98,7 @@ window.CONTENIDO = {
       titulo: "«Cooperar es mejor que competir», la premisa de Manuel Leiva para construir soberanía desde el cooperativismo",
       resumen: "Entrevista en Revista Vértices: soberanía tecnológica, una inteligencia artificial argentina, el valor que queda en el territorio y el balance de tres años al frente de FACTTIC.",
       medio: "Revista Vértices", fecha: "2026-11-21", fechaTexto: "21 de noviembre de 2026",
-      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 25%",
+      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 4%",
       url: "https://www.vertices.com.ar/d/contenidos/cooperar-es-mejor-que-competir-la-premisa-de-manuel-leiva-para-construir-soberania-de-1532/"
     },
     {
@@ -221,6 +221,7 @@ window.CONTENIDO = {
       fecha: "2026-11-21", fechaTexto: "21 de noviembre de 2026",
       ciudad: "Formosa", region: "Formosa", pais: "AR",
       tema: "«El futuro también se construye con IA» · Polo Científico, Tecnológico y de Innovación",
+      foto: "img/eventos/formosa-foro-futuros.jpg", alt: "Manuel Leiva con micrófono, de pie entre el público, señala hacia el auditorio lleno de estudiantes en el Polo Científico de Formosa", posicion: "50% 45%",
       url: "https://www.eldestapeweb.com/informacion-general/robotica-inteligencia-artificial-drones-formosa-prepara-nueva-edicion-juegos-tecnologicos-provinciales-202611199301",
       quien: "manuel"
     },
@@ -229,6 +230,7 @@ window.CONTENIDO = {
       fecha: "2026-11-24", fechaTexto: "24 de noviembre de 2026",
       ciudad: "Sunchales", region: "Santa Fe", pais: "AR",
       tema: "Casa Cooperativa de Sunchales · Para directivos y docentes · Fundación Grupo Sancor Seguros",
+      foto: "img/eventos/sunchales-docentes.jpg", alt: "Selfie de Manuel Leiva con directivos y docentes al cierre de la charla en la Casa Cooperativa de Sunchales", posicion: "50% 35%",
       url: "https://www.instagram.com/fundacion.grupo.sancor.seguros/p/Df9oci6Jis-/",
       quien: "manuel"
     },
@@ -347,7 +349,7 @@ window.CONTENIDO = {
   contenidos: [
     {
       tipo: "nota", etiqueta: "Entrevista · Soberanía tecnológica",
-      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 25%",
+      foto: "img/eventos/taburete.jpg", alt: "Manuel Leiva habla con micrófono sentado en un taburete sobre un escenario", posicion: "50% 4%",
       titulo: "«Cooperar es mejor que competir»", detalle: "Revista Vértices · 21 de noviembre de 2026", url: "https://www.vertices.com.ar/d/contenidos/cooperar-es-mejor-que-competir-la-premisa-de-manuel-leiva-para-construir-soberania-de-1532/"
     },
     {
